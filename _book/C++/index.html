@@ -1,0 +1,685 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>C++ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../数据结构/" />
+    
+    
+    <link rel="prev" href="../C/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../C/">
+            
+                <a href="../C/">
+            
+                    
+                    C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../数据结构/">
+            
+                <a href="../数据结构/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >C++</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x540D;&#x5B57;&#x7A7A;&#x95F4;">&#x540D;&#x5B57;&#x7A7A;&#x95F4;</h1>
+<blockquote>
+<p>&#x5B9A;&#x4E49;&#xFF1A;namespace &#x7A7A;&#x95F4;&#x540D;</p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<p>1.using namespace &#x7A7A;&#x95F4;&#x540D;</p>
+<p>2.&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26; ::</p>
+<p>&#x4F5C;&#x7528;&#xFF1A;</p>
+<p>1.&#x5212;&#x5206;&#x903B;&#x8F91;&#x533A;&#x57DF;</p>
+<p>2.&#x89E3;&#x51B3;&#x540D;&#x5B57;&#x51B2;&#x7A81;</p>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code>   #include &lt;iostream&gt;
+
+
+#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+}
+namespace lsc
+{
+    char* name = &quot;lsc&quot;;
+}
+
+
+using namespace std;
+int main()
+{
+    using namespace ldc;
+    cout &lt;&lt; name &lt;&lt; endl;
+    cout &lt;&lt; ldc::name &lt;&lt; endl;
+    cout &lt;&lt; lsc::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5408;&#x5E76;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+}
+namespace ldc
+{
+    char* showName()
+    {
+        return name;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::name &lt;&lt; endl;
+    cout &lt;&lt; ldc::showName() &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5D4C;&#x5957;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+    namespace son
+    {
+        char* name = &quot;lp&quot;;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::son::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x7A7A;&#x95F4;&#x522B;&#x540D;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+    namespace son
+    {
+        char* name = &quot;lp&quot;;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::son::name &lt;&lt; endl;
+    namespace son = ldc::son;//&#x522B;&#x540D;
+    cout &lt;&lt; son::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>using namespace &#x7A7A;&#x95F4;&#x540D;;&#x4F5C;&#x7528;&#x662F;&#x628A;&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5185;&#x7684;&#x5B9A;&#x4E49;&#x66B4;&#x9732;&#x51FA;&#x6765;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5730;&#x65B9;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x8F6C;&#x7684;&#xFF0C;&#x5373;&#x5DF2;&#x7ECF;&#x66B4;&#x9732;&#x7684;&#x4E0D;&#x53EF;&#x518D;&#x9690;&#x85CF;&#x3002;</p>
+</blockquote>
+<h1 id="&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;">&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;</h1>
+<blockquote>
+<p>&#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x5173;&#x952E;&#x5B57;&#x4E86;</p>
+<p>C++&#x7ED3;&#x6784;&#x652F;&#x6301;&#x51FD;&#x6570;&#x6210;&#x5458;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+struct student
+{
+    char* name;
+    void showName()
+    {
+        cout &lt;&lt; name &lt;&lt; endl;
+    }
+};
+int main()
+{
+    student s = { &quot;ldc&quot; };
+    s.showName();
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x533F;&#x540D;&#x8054;&#x5408;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+int main()
+{
+    union
+    {
+        int i;
+        char c;
+    };
+    i = 65;
+    cout &lt;&lt; c &lt;&lt; endl;//A
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x679A;&#x4E3E;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+enum Color
+{
+    RED,//1
+    BLUE,//2
+    BLACK//3
+};
+
+int main()
+{
+    Color c = RED;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="bool">bool</h1>
+<blockquote>
+<p>bool&#x7C7B;&#x578B;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;true(&#x771F;)&#x548C;false(&#x5047;);&#x672C;&#x8D28;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;1&#x548C;0</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x53EF;&#x9690;&#x5F0F;&#x8F6C;&#x6362;bool&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x975E;0&#x5373;1&#xFF0C;&#x975E;&#x7A7A;&#x5373;&#x771F;,&#x6307;&#x9488;&#x4E3A;NULL&#x4E3A;&#x5047;</p>
+</blockquote>
+<h1 id="&#x5185;&#x8054;&#x51FD;&#x6570;">&#x5185;&#x8054;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x7528;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#xFF0C;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x907F;&#x514D;&#x8C03;&#x7528;&#x7684;&#x5F00;&#x9500;</p>
+<p>&#x8FD9;&#x662F;&#x671F;&#x671B;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x662F;&#x5426;&#x5185;&#x8054;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x51B3;&#x5B9A;</p>
+<p>&#x7F3A;&#x70B9;&#x662F;&#x5360;&#x5185;&#x5B58;&#xFF0C;&#x9012;&#x5F52;&#x4E0D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x8054;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+inline int max(int a, int b)
+{
+    return a &gt; b ? a : b;
+}
+
+int main()
+{
+    cout &lt;&lt; max(1, 2) &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x91CD;&#x8F7D;">&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>&#x5728;&#x540C;&#x4E00;&#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#xFF0C;&#x540C;&#x540D;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x6784;&#x6210;&#x91CD;&#x8F7D;</p>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E0D;&#x4E00;&#x81F4;&#x8868;&#x73B0;&#x4E3A;&#xFF1A;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x53C2;&#x6570;&#x987A;&#x5E8F;&#x4E0D;&#x540C;</p>
+<p>&#x91CD;&#x8F7D;&#x901A;&#x8FC7;C++&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x51FD;&#x6570;&#x540D;&#x6539;&#x540D;&#x5B9E;&#x73B0;</p>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int add(int a, int b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addii
+{
+    return a + b;
+}
+
+double add(double a, int b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3adddi
+{
+    return a + b;
+}
+
+double add(int a, double b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addid
+{
+    return a + b;
+}
+
+int add(int a, int b,int c)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addiii
+{
+    return a + b + c;
+}
+
+int main()
+{
+    cout &lt;&lt; add(1, 2) &lt;&lt; endl;//3
+    cout &lt;&lt; add(1.1, 2) &lt;&lt; endl;//3.1
+    cout &lt;&lt; add(1, 2.1) &lt;&lt; endl;//3.1
+    cout &lt;&lt; add(1, 2,3) &lt;&lt; endl;//6
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x7F3A;&#x7701;">&#x7F3A;&#x7701;</h1>
+<blockquote>
+<p>&#x7ED9;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</p>
+<p>&#x7981;&#x6B62;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;</p>
+<p>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#xFF0C;&#x5B9A;&#x4E49;&#x53EA;&#x80FD;&#x662F;&#x4E00;&#x6B21;&#x3002;&#x5EFA;&#x8BAE;&#x58F0;&#x660E;&#x65F6;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+void fun(int a,int b);//&#x58F0;&#x660E;
+
+void fun(int a = 10, int b = 20)//&#x5B9A;&#x4E49;
+{
+    cout &lt;&lt; &quot;a:&quot; &lt;&lt; a &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+}
+int main()
+{
+    fun();
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x54D1;&#x5143;">&#x54D1;&#x5143;</h1>
+<blockquote>
+<p>&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53EA;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x540D;&#x5B57;
+&#x7528;&#x4E8E;&#x517C;&#x5BB9;&#x65E7;&#x7248;&#x672C;&#x65E0;&#x7528;&#x7684;&#x53C2;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x65E7;&#x7248;&#x672C;
+//void fun(int a , int b)
+//{
+//    cout &lt;&lt; &quot;a:&quot; &lt;&lt; a &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+//}
+//&#x65B0;&#x7248;&#x672C;
+void fun(int , int b )
+{
+    cout  &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+}
+int main()
+{
+    fun(10,20);
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x5F15;&#x7528;">&#x5F15;&#x7528;</h1>
+<blockquote>
+<p>&#x5F15;&#x7528;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x672C;&#x8D28;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x9488;</p>
+<p>&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int main()
+{
+    int age = 18;
+    int&amp; a = age;
+    cout &lt;&lt; &quot;age:&quot; &lt;&lt; age &lt;&lt; endl;
+    cout &lt;&lt; &quot;int&amp; a:&quot; &lt;&lt; a &lt;&lt; endl;
+    //&#x5730;&#x5740;&#x76F8;&#x540C;
+    cout &lt;&lt; &quot;age&#x5730;&#x5740;&#xFF1A;&quot; &lt;&lt; &amp;age &lt;&lt; endl;
+    cout &lt;&lt; &quot;int&amp; a&#x5730;&#x5740;&#xFF1A;&quot; &lt;&lt; &amp;a &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;">&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;</h1>
+<blockquote>
+<p>&#x4F7F;&#x7528;new/delete&#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x7533;&#x8BF7;/&#x91CA;&#x653E;&#x5185;&#x5B58;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int main()
+{
+    int* age = new int(18);
+    cout &lt;&lt; *age &lt;&lt; endl;
+    delete age;
+    age = NULL;
+
+    int* arr = new int[3];
+    for (size_t i = 0; i &lt; 3; i++)
+    {
+        arr[i] = i;
+    }
+    for (size_t i = 0; i &lt; 3; i++)
+    {
+        cout &lt;&lt; &quot;arr[i]:&quot; &lt;&lt; arr[i] &lt;&lt; endl;
+
+    }
+    delete[] arr;
+    arr = NULL;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;">&#x9762;&#x5411;&#x5BF9;&#x8C61;</h1>
+<blockquote>
+<p>&#x9002;&#x5408;&#x5F00;&#x53D1;&#x5927;&#x578B;&#x8F6F;&#x4EF6;</p>
+<p>&#x6570;&#x636E;&#x62BD;&#x8C61;&#xFF0C;&#x4EE3;&#x7801;&#x590D;&#x7528;&#xFF0C;&#x63D0;&#x5347;&#x6548;&#x7387;&#xFF0C;&#x51CF;&#x4F4E;&#x6210;&#x672C;</p>
+<p>&#x4E09;&#x5927;&#x7279;&#x6027;&#xFF1A;&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;</p>
+<p>&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h1 id="&#x7C7B;">&#x7C7B;</h1>
+<blockquote>
+<p>&#x62E5;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x548C;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x7EC4;&#x5BF9;&#x8C61;</p>
+<p>&#x7C7B;&#x662F;&#x4E00;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x8868;&#x793A;&#x5C5E;&#x6027;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x8868;&#x793A;&#x884C;&#x4E3A;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>&#x7C7B;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;</p>
+<p>class &#x7C7B;&#x540D; :public/protected/private&#xFF08;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#xFF09; &#x57FA;&#x7C7B;</p>
+<p>{</p>
+<p>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x9650;&#x5B9A;&#x7B26;&#xFF1A;</p>
+<p>   &#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>   &#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>}</p>
+<p>public:&#x5916;&#x90E8;&#xFF0C;&#x81EA;&#x5DF1;&#x4EE5;&#x53CA;&#x6D3E;&#x751F;&#x7C7B;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>protected:&#x5916;&#x90E8;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x81EA;&#x5DF1;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>private:&#x5916;&#x90E8;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x53EA;&#x6709;&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>&#x7C7B;&#x7684;&#x6210;&#x5458;&#x9ED8;&#x8BA4;&#x662F;&#x88AB;private&#x4FEE;&#x9970;</p>
+<p>&#x5C01;&#x88C5;&#xFF1A;&#x5C06;&#x5B9E;&#x73B0;&#x7684;&#x7EC6;&#x8282;&#x9690;&#x85CF;&#xFF0C;&#x66B4;&#x9732;&#x516C;&#x6709;&#x63A5;&#x53E3;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Ldc
+{
+public:
+    int m_age;
+    void setAge(int age)
+    {
+        m_age = age;
+    }
+    int getAge()
+    {
+        return m_age;
+    }
+};
+
+int main()
+{
+    //&#x6808;&#x533A;&#x5BF9;&#x8C61;
+    Ldc z_ldc;
+    z_ldc.setAge(24);
+    cout &lt;&lt; z_ldc.getAge() &lt;&lt; endl;
+
+    //&#x5806;&#x533A;&#x5BF9;&#x8C61;
+    Ldc* d_ldc = new Ldc;
+    d_ldc-&gt;setAge(24);
+    cout &lt;&lt; d_ldc-&gt;getAge() &lt;&lt; endl;
+    delete d_ldc;
+    d_ldc = NULL;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x4E3A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x8D4B;&#x521D;&#x503C;&#xFF0C;&#x5206;&#x914D;&#x8D44;&#x6E90;&#xFF0C;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x7684;&#x521D;&#x59CB;&#x72B6;&#x6001;</p>
+<p>&#x51FD;&#x6570;&#x540D;&#x4E0E;&#x7C7B;&#x540C;&#x540D;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65F6;&#x81EA;&#x52A8;&#x8C03;&#x7528;</p>
+<p>&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x4E3A;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF08;&#x5148;&#x8BA1;&#x7B97;&#x5BF9;&#x8C61;&#x6240;&#x9700;&#x7684;&#x5185;&#x5B58;&#xFF09;</p>
+<p>2.&#x6784;&#x9020;&#x57FA;&#x7C7B;&#x3002;&#xFF08;&#x5982;&#x679C;&#x6709;&#x57FA;&#x7C7B;&#xFF09;</p>
+<p>3.&#x6784;&#x9020;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>4.&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x8F7D;&#xFF1A;&#x82E5;&#x4E00;&#x4E2A;&#x7C7B;&#x65E0;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x82E5;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x6790;&#x6784;&#x51FD;&#x6570;">&#x6790;&#x6784;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x7528;&#x4E8E;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5728;&#x5BF9;&#x8C61;&#x9500;&#x6BC1;&#x65F6;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#xFF0C;&#x65E0;&#x53C2;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</p>
+<p>&#x9500;&#x6BC1;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x6267;&#x884C;&#x6790;&#x6784;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>2.&#x6790;&#x6784;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>3.&#x6790;&#x6784;&#x57FA;&#x7C7B;&#x90E8;&#x5206;</p>
+<p>4.&#x91CA;&#x653E;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x5185;&#x5B58;</p>
+</blockquote>
+<h1 id="this">this</h1>
+<blockquote>
+<p>this&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x662F;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x5F53;&#x524D;&#x7684;&#x5BF9;&#x8C61;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../C/" class="navigation navigation-prev " aria-label="Previous page: C">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../数据结构/" class="navigation navigation-next " aria-label="Next page: 数据结构">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"C++","level":"1.3","depth":1,"next":{"title":"数据结构","level":"1.4","depth":1,"path":"数据结构/README.md","ref":"数据结构/README.md","articles":[]},"previous":{"title":"C","level":"1.2","depth":1,"path":"C/README.md","ref":"C/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/README.md","mtime":"2018-11-25T07:41:13.792Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-26T11:12:40.732Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
