@@ -1,0 +1,1684 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>C++ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../day18-12-15/" />
+    
+    
+    <link rel="prev" href="../C/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../C/">
+            
+                <a href="../C/">
+            
+                    
+                    C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../day18-12-15/">
+            
+                <a href="../day18-12-15/">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../数据结构/">
+            
+                <a href="../数据结构/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >C++</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x540D;&#x5B57;&#x7A7A;&#x95F4;">&#x540D;&#x5B57;&#x7A7A;&#x95F4;</h1>
+<blockquote>
+<p>&#x5B9A;&#x4E49;&#xFF1A;namespace &#x7A7A;&#x95F4;&#x540D;</p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<p>1.using namespace &#x7A7A;&#x95F4;&#x540D;</p>
+<p>2.&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26; ::</p>
+<p>&#x4F5C;&#x7528;&#xFF1A;</p>
+<p>1.&#x5212;&#x5206;&#x903B;&#x8F91;&#x533A;&#x57DF;</p>
+<p>2.&#x89E3;&#x51B3;&#x540D;&#x5B57;&#x51B2;&#x7A81;</p>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code>   #include &lt;iostream&gt;
+
+
+#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+}
+namespace lsc
+{
+    char* name = &quot;lsc&quot;;
+}
+
+
+using namespace std;
+int main()
+{
+    using namespace ldc;
+    cout &lt;&lt; name &lt;&lt; endl;
+    cout &lt;&lt; ldc::name &lt;&lt; endl;
+    cout &lt;&lt; lsc::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5408;&#x5E76;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+}
+namespace ldc
+{
+    char* showName()
+    {
+        return name;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::name &lt;&lt; endl;
+    cout &lt;&lt; ldc::showName() &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5D4C;&#x5957;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+    namespace son
+    {
+        char* name = &quot;lp&quot;;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::son::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x7A7A;&#x95F4;&#x522B;&#x540D;</p>
+</blockquote>
+<pre><code>#if 1
+namespace ldc
+{
+    char* name = &quot;ldc&quot;;
+    namespace son
+    {
+        char* name = &quot;lp&quot;;
+    }
+}
+
+
+using namespace std;
+int main()
+{
+    cout &lt;&lt; ldc::son::name &lt;&lt; endl;
+    namespace son = ldc::son;//&#x522B;&#x540D;
+    cout &lt;&lt; son::name &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>using namespace &#x7A7A;&#x95F4;&#x540D;;&#x4F5C;&#x7528;&#x662F;&#x628A;&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x5185;&#x7684;&#x5B9A;&#x4E49;&#x66B4;&#x9732;&#x51FA;&#x6765;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x5730;&#x65B9;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#x662F;&#x4E0D;&#x53EF;&#x9006;&#x8F6C;&#x7684;&#xFF0C;&#x5373;&#x5DF2;&#x7ECF;&#x66B4;&#x9732;&#x7684;&#x4E0D;&#x53EF;&#x518D;&#x9690;&#x85CF;&#x3002;</p>
+</blockquote>
+<h1 id="&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;">&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;</h1>
+<blockquote>
+<p>&#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x5173;&#x952E;&#x5B57;&#x4E86;</p>
+<p>C++&#x7ED3;&#x6784;&#x652F;&#x6301;&#x51FD;&#x6570;&#x6210;&#x5458;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+struct student
+{
+    char* name;
+    void showName()
+    {
+        cout &lt;&lt; name &lt;&lt; endl;
+    }
+};
+int main()
+{
+    student s = { &quot;ldc&quot; };
+    s.showName();
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x533F;&#x540D;&#x8054;&#x5408;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+int main()
+{
+    union
+    {
+        int i;
+        char c;
+    };
+    i = 65;
+    cout &lt;&lt; c &lt;&lt; endl;//A
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x679A;&#x4E3E;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+enum Color
+{
+    RED,//1
+    BLUE,//2
+    BLACK//3
+};
+
+int main()
+{
+    Color c = RED;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="bool">bool</h1>
+<blockquote>
+<p>bool&#x7C7B;&#x578B;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x503C;&#xFF0C;true(&#x771F;)&#x548C;false(&#x5047;);&#x672C;&#x8D28;&#x4E3A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7684;1&#x548C;0</p>
+<p>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x53EF;&#x9690;&#x5F0F;&#x8F6C;&#x6362;bool&#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;&#x975E;0&#x5373;1&#xFF0C;&#x975E;&#x7A7A;&#x5373;&#x771F;,&#x6307;&#x9488;&#x4E3A;NULL&#x4E3A;&#x5047;</p>
+</blockquote>
+<h1 id="&#x5185;&#x8054;&#x51FD;&#x6570;">&#x5185;&#x8054;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x7528;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x597D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#xFF0C;&#x66FF;&#x6362;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x907F;&#x514D;&#x8C03;&#x7528;&#x7684;&#x5F00;&#x9500;</p>
+<p>&#x8FD9;&#x662F;&#x671F;&#x671B;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x662F;&#x5426;&#x5185;&#x8054;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x51B3;&#x5B9A;</p>
+<p>&#x7F3A;&#x70B9;&#x662F;&#x5360;&#x5185;&#x5B58;&#xFF0C;&#x9012;&#x5F52;&#x4E0D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x8054;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+inline int max(int a, int b)
+{
+    return a &gt; b ? a : b;
+}
+
+int main()
+{
+    cout &lt;&lt; max(1, 2) &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x91CD;&#x8F7D;">&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>&#x5728;&#x540C;&#x4E00;&#x4F5C;&#x7528;&#x57DF;&#x4E0B;&#xFF0C;&#x540C;&#x540D;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E0D;&#x4E00;&#x81F4;&#x5219;&#x6784;&#x6210;&#x91CD;&#x8F7D;</p>
+<p>&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E0D;&#x4E00;&#x81F4;&#x8868;&#x73B0;&#x4E3A;&#xFF1A;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x53C2;&#x6570;&#x987A;&#x5E8F;&#x4E0D;&#x540C;</p>
+<p>&#x91CD;&#x8F7D;&#x901A;&#x8FC7;C++&#x7F16;&#x8BD1;&#x5668;&#x5BF9;&#x51FD;&#x6570;&#x540D;&#x6539;&#x540D;&#x5B9E;&#x73B0;</p>
+<p>&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int add(int a, int b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addii
+{
+    return a + b;
+}
+
+double add(double a, int b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3adddi
+{
+    return a + b;
+}
+
+double add(int a, double b)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addid
+{
+    return a + b;
+}
+
+int add(int a, int b,int c)//&#x7F16;&#x8BD1;&#x8FC7;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF1A;_Z3addiii
+{
+    return a + b + c;
+}
+
+int main()
+{
+    cout &lt;&lt; add(1, 2) &lt;&lt; endl;//3
+    cout &lt;&lt; add(1.1, 2) &lt;&lt; endl;//3.1
+    cout &lt;&lt; add(1, 2.1) &lt;&lt; endl;//3.1
+    cout &lt;&lt; add(1, 2,3) &lt;&lt; endl;//6
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x7F3A;&#x7701;">&#x7F3A;&#x7701;</h1>
+<blockquote>
+<p>&#x7ED9;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x503C;</p>
+<p>&#x7981;&#x6B62;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;</p>
+<p>&#x51FD;&#x6570;&#x58F0;&#x660E;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#xFF0C;&#x5B9A;&#x4E49;&#x53EA;&#x80FD;&#x662F;&#x4E00;&#x6B21;&#x3002;&#x5EFA;&#x8BAE;&#x58F0;&#x660E;&#x65F6;&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x503C;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+void fun(int a,int b);//&#x58F0;&#x660E;
+
+void fun(int a = 10, int b = 20)//&#x5B9A;&#x4E49;
+{
+    cout &lt;&lt; &quot;a:&quot; &lt;&lt; a &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+}
+int main()
+{
+    fun();
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x54D1;&#x5143;">&#x54D1;&#x5143;</h1>
+<blockquote>
+<p>&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x53EA;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x540D;&#x5B57;
+&#x7528;&#x4E8E;&#x517C;&#x5BB9;&#x65E7;&#x7248;&#x672C;&#x65E0;&#x7528;&#x7684;&#x53C2;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x65E7;&#x7248;&#x672C;
+//void fun(int a , int b)
+//{
+//    cout &lt;&lt; &quot;a:&quot; &lt;&lt; a &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+//}
+//&#x65B0;&#x7248;&#x672C;
+void fun(int , int b )
+{
+    cout  &lt;&lt; &quot;b:&quot; &lt;&lt; b &lt;&lt; endl;
+}
+int main()
+{
+    fun(10,20);
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x5F15;&#x7528;">&#x5F15;&#x7528;</h1>
+<blockquote>
+<p>&#x5F15;&#x7528;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x672C;&#x8D28;&#x662F;&#x4E00;&#x4E2A;&#x6307;&#x9488;</p>
+<p>&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int main()
+{
+    int age = 18;
+    int&amp; a = age;
+    cout &lt;&lt; &quot;age:&quot; &lt;&lt; age &lt;&lt; endl;
+    cout &lt;&lt; &quot;int&amp; a:&quot; &lt;&lt; a &lt;&lt; endl;
+    //&#x5730;&#x5740;&#x76F8;&#x540C;
+    cout &lt;&lt; &quot;age&#x5730;&#x5740;&#xFF1A;&quot; &lt;&lt; &amp;age &lt;&lt; endl;
+    cout &lt;&lt; &quot;int&amp; a&#x5730;&#x5740;&#xFF1A;&quot; &lt;&lt; &amp;a &lt;&lt; endl;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;">&#x52A8;&#x6001;&#x5185;&#x5B58;&#x5206;&#x914D;</h1>
+<blockquote>
+<p>&#x4F7F;&#x7528;new/delete&#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x7533;&#x8BF7;/&#x91CA;&#x653E;&#x5185;&#x5B58;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+int main()
+{
+    int* age = new int(18);
+    cout &lt;&lt; *age &lt;&lt; endl;
+    delete age;
+    age = NULL;
+
+    int* arr = new int[3];
+    for (size_t i = 0; i &lt; 3; i++)
+    {
+        arr[i] = i;
+    }
+    for (size_t i = 0; i &lt; 3; i++)
+    {
+        cout &lt;&lt; &quot;arr[i]:&quot; &lt;&lt; arr[i] &lt;&lt; endl;
+
+    }
+    delete[] arr;
+    arr = NULL;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;">&#x9762;&#x5411;&#x5BF9;&#x8C61;</h1>
+<blockquote>
+<p>&#x9002;&#x5408;&#x5F00;&#x53D1;&#x5927;&#x578B;&#x8F6F;&#x4EF6;</p>
+<p>&#x6570;&#x636E;&#x62BD;&#x8C61;&#xFF0C;&#x4EE3;&#x7801;&#x590D;&#x7528;&#xFF0C;&#x63D0;&#x5347;&#x6548;&#x7387;&#xFF0C;&#x51CF;&#x4F4E;&#x6210;&#x672C;</p>
+<p>&#x4E09;&#x5927;&#x7279;&#x6027;&#xFF1A;&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;</p>
+<p>&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h1 id="&#x7C7B;">&#x7C7B;</h1>
+<blockquote>
+<p>&#x62E5;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x548C;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x7EC4;&#x5BF9;&#x8C61;</p>
+<p>&#x7C7B;&#x662F;&#x4E00;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x8868;&#x793A;&#x5C5E;&#x6027;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x8868;&#x793A;&#x884C;&#x4E3A;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>&#x7C7B;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;</p>
+<p>class &#x7C7B;&#x540D; :public/protected/private&#xFF08;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#xFF09; &#x57FA;&#x7C7B;</p>
+<p>{</p>
+<p>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x9650;&#x5B9A;&#x7B26;&#xFF1A;</p>
+<p>   &#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>   &#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>}</p>
+<p>public:&#x5916;&#x90E8;&#xFF0C;&#x81EA;&#x5DF1;&#x4EE5;&#x53CA;&#x6D3E;&#x751F;&#x7C7B;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>protected:&#x5916;&#x90E8;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x81EA;&#x5DF1;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>private:&#x5916;&#x90E8;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x53EA;&#x6709;&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>&#x7C7B;&#x7684;&#x6210;&#x5458;&#x9ED8;&#x8BA4;&#x662F;&#x88AB;private&#x4FEE;&#x9970;</p>
+<p>&#x5C01;&#x88C5;&#xFF1A;&#x5C06;&#x5B9E;&#x73B0;&#x7684;&#x7EC6;&#x8282;&#x9690;&#x85CF;&#xFF0C;&#x66B4;&#x9732;&#x516C;&#x6709;&#x63A5;&#x53E3;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Ldc
+{
+public:
+    int m_age;
+    void setAge(int age)
+    {
+        m_age = age;
+    }
+    int getAge()
+    {
+        return m_age;
+    }
+};
+
+int main()
+{
+    //&#x6808;&#x533A;&#x5BF9;&#x8C61;
+    Ldc z_ldc;
+    z_ldc.setAge(24);
+    cout &lt;&lt; z_ldc.getAge() &lt;&lt; endl;
+
+    //&#x5806;&#x533A;&#x5BF9;&#x8C61;
+    Ldc* d_ldc = new Ldc;
+    d_ldc-&gt;setAge(24);
+    cout &lt;&lt; d_ldc-&gt;getAge() &lt;&lt; endl;
+    delete d_ldc;
+    d_ldc = NULL;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x4E3A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x8D4B;&#x521D;&#x503C;&#xFF0C;&#x5206;&#x914D;&#x8D44;&#x6E90;&#xFF0C;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x7684;&#x521D;&#x59CB;&#x72B6;&#x6001;</p>
+<p>&#x51FD;&#x6570;&#x540D;&#x4E0E;&#x7C7B;&#x540C;&#x540D;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65F6;&#x81EA;&#x52A8;&#x8C03;&#x7528;</p>
+<p>&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x4E3A;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF08;&#x5148;&#x8BA1;&#x7B97;&#x5BF9;&#x8C61;&#x6240;&#x9700;&#x7684;&#x5185;&#x5B58;&#xFF09;</p>
+<p>2.&#x6784;&#x9020;&#x57FA;&#x7C7B;&#x3002;&#xFF08;&#x5982;&#x679C;&#x6709;&#x57FA;&#x7C7B;&#xFF09;</p>
+<p>3.&#x6784;&#x9020;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>4.&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x8F7D;&#xFF1A;&#x82E5;&#x4E00;&#x4E2A;&#x7C7B;&#x65E0;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x82E5;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x6790;&#x6784;&#x51FD;&#x6570;">&#x6790;&#x6784;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x7528;&#x4E8E;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5728;&#x5BF9;&#x8C61;&#x9500;&#x6BC1;&#x65F6;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#xFF0C;&#x65E0;&#x53C2;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</p>
+<p>&#x9500;&#x6BC1;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x6267;&#x884C;&#x6790;&#x6784;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>2.&#x6790;&#x6784;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>3.&#x6790;&#x6784;&#x57FA;&#x7C7B;&#x90E8;&#x5206;</p>
+<p>4.&#x91CA;&#x653E;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x5185;&#x5B58;</p>
+</blockquote>
+<h1 id="this">this</h1>
+<blockquote>
+<p>this&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x662F;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x5F53;&#x524D;&#x7684;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h1 id="&#x5E38;&#x6210;&#x5458;">&#x5E38;&#x6210;&#x5458;</h1>
+<blockquote>
+<p>&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF1A;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x521D;&#x59CB;&#x5316;&#x8868;&#x6765;&#x8D4B;&#x503C;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x540E;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;</p>
+<p>&#x6BCF;&#x4E2A;&#x91CD;&#x8F7D;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x90FD;&#x9700;&#x521D;&#x59CB;&#x5316;&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x786E;&#x4FDD;&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x6709;&#x503C;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std; 
+
+class Human
+{
+public:
+    Human(string const&amp; name) :m_name(name){};
+
+private:
+    const string m_name;
+public:
+    void look_name()
+    {
+        cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(&quot;ldc&quot;);
+    ldc.look_name();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF1A;&#x5728;&#x5706;&#x62EC;&#x53F7;&#x540E;&#x9762;&#x52A0;&#x4E2A;const &#x4FEE;&#x9970;this&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;this&#x6307;&#x9488;&#x4FEE;&#x6539;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x9664;&#x975E;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x88AB;mutable&#x4FEE;&#x9970;</p>
+<p>&#x548C;&#x666E;&#x901A;&#x540C;&#x540D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x6784;&#x6210;&#x91CD;&#x8F7D;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Human
+{
+public:
+    Human(int age) :m_age(age){};
+
+private:
+    int m_age;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()
+    {
+        cout &lt;&lt; m_age++ &lt;&lt; endl;
+    }
+    //&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void c_look_name()const
+    {
+        //&#x4E0D;&#x53EF;&#x4FEE;&#x6539;
+        //cout &lt;&lt; m_age++ &lt;&lt; endl;
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(24);
+    ldc.c_look_name();//24
+    ldc.look_name();//24
+    ldc.c_look_name();//25
+
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x5E38;&#x5BF9;&#x8C61;">&#x5E38;&#x5BF9;&#x8C61;</h1>
+<blockquote>
+<p>&#x88AB;const &#x4FEE;&#x9970;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x6307;&#x9488;&#x6216;&#x5BF9;&#x8C61;&#x5F15;&#x7528;</p>
+<p>&#x5E38;&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x8C03;&#x7528;&#x5E38;&#x51FD;&#x6570;&#xFF0C;&#x975E;&#x5E38;&#x5BF9;&#x8C61;&#x5373;&#x53EF;&#x8C03;&#x7528;&#x5E38;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x975E;&#x5E38;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Human
+{
+public:
+    Human(int age) :m_age(age){};
+
+private:
+    int m_age;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()
+    {
+        cout &lt;&lt; m_age++ &lt;&lt; endl;
+    }
+    //&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void c_look_name()const
+    {
+        //&#x4E0D;&#x53EF;&#x4FEE;&#x6539;
+        //cout &lt;&lt; m_age++ &lt;&lt; endl;
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+    //&#x91CD;&#x8F7D;&#x7684;&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()const
+    {
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(24);
+    ldc.c_look_name();//24
+    ldc.look_name();//24
+    ldc.c_look_name();//25
+
+    const Human _ldc = Human(24);
+    _ldc.look_name();//24
+    _ldc.look_name();//24
+
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x62F7;&#x8D1D;&#x6784;&#x9020;">&#x62F7;&#x8D1D;&#x6784;&#x9020;</h1>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    Complex(double real, double vir = 0) :m_real(real), m_vir(vir){};
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(2.5);//&#x663E;&#x793A;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020;
+    c1.print();
+
+    Complex c2 = 2.5;//&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020; &#x5B9E;&#x9645;&#x8BED;&#x53E5;&#x4E3A;  Complex c2 = Complex (2.5);,&#x7528;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6784;&#x9020;&#x7684;&#x533F;&#x540D;&#x53D8;&#x91CF;&#x6765;&#x8F6C;&#x6362;
+    c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>explicit&#xFF1A;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    //&#x7528;explicit&#x4FEE;&#x9970;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;
+    explicit Complex(double real, double vir = 0) :m_real(real), m_vir(vir){};
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(2.5);//&#x663E;&#x793A;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020;
+    c1.print();
+
+    //Complex c2 = 2.5;//&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020; &#x5B9E;&#x9645;&#x8BED;&#x53E5;&#x4E3A;  Complex c2 = Complex (2.5);,&#x7528;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6784;&#x9020;&#x7684;&#x533F;&#x540D;&#x53D8;&#x91CF;&#x6765;&#x8F6C;&#x6362; &#x82E5;&#x5355;&#x53C2;&#x6784;&#x9020;&#x7528;explicit&#x4FEE;&#x9970;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;
+    //c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x62F7;&#x8D1D;&#x6784;&#x9020;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    //&#x666E;&#x901A;&#x6784;&#x9020;
+    Complex(double real, double vir)
+    {
+        cout &lt;&lt; &quot;&#x8C03;&#x7528;&#x666E;&#x901A;&#x6784;&#x9020;&quot; &lt;&lt; endl;
+        this-&gt;m_real = real;
+        this-&gt;m_vir = vir;
+    }
+    //&#x62F7;&#x8D1D;&#x6784;&#x9020;
+    Complex(Complex const&amp; that)
+    {
+        cout &lt;&lt; &quot;&#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;&quot; &lt;&lt; endl;
+        this-&gt;m_real = that.m_real;
+        this-&gt;m_vir = that.m_vir;
+    };
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(1, 2.3);//&#x8C03;&#x7528;&#x666E;&#x901A;&#x6784;&#x9020;
+    c1.print();
+    Complex c2 = c1;//&#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;  &#x9690;&#x5F0F;&#x8C03;&#x7528;  Complex c2 = Complex (c1);
+    c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x82E5;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x6D45;&#x62F7;&#x8D1D;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;">&#x6D45;&#x62F7;&#x8D1D;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;</h1>
+<blockquote>
+<p>&#x6D45;&#x62F7;&#x8D1D;&#xFF1A;&#x5BF9;&#x5185;&#x5B58;&#x5730;&#x5740;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x6307;&#x9488;&#x548C;&#x539F;&#x6765;&#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x540C;&#x4E00;&#x7247;&#x5185;&#x5B58;&#xFF0C;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x671F;&#x4E2D;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x53BB;&#x91CA;&#x653E;&#x5185;&#x5B58;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x4ED6;&#x6307;&#x9488;&#x90FD;&#x4F1A;&#x53D8;&#x6210;&#x91CE;&#x6307;&#x9488;</p>
+<p>&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;&#x5BF9;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x62F7;&#x8D1D;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x76F8;&#x540C;&#xFF0C;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E0D;&#x540C;&#x3002;&#x5373;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x4E2A;&#x4F53;&#x3002;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#xFF0C;&#x4E92;&#x4E0D;&#x5E72;&#x6D89;&#x3002;</p>
+</blockquote>
+<h1 id="&#x53CB;&#x5143;">&#x53CB;&#x5143;</h1>
+<blockquote>
+<p>&#x53CB;&#x5143;&#x51FD;&#x6570; &#xFF1A; friend + &#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x90E8;&#x5206;&#x3002;&#x5373;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E3A;&#x53CB;&#x5143;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+class Ldc
+{
+    friend void print(Ldc const&amp; that);//&#x58F0;&#x660E;&#x53CB;&#x5143;&#xFF0C;
+public:
+    Ldc(int age) :m_age(age)
+    {
+
+    };
+
+private:
+
+    int m_age;
+
+};
+
+void print(Ldc const&amp; that)
+{
+    cout &lt;&lt; that.m_age &lt;&lt; endl;//&#x53CB;&#x5143;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;that&#x5BF9;&#x8C61;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;m_age;
+}
+
+
+int main()
+{
+    Ldc ldc = 25;
+    print(ldc);
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x53CB;&#x5143;&#x7C7B;&#xFF1A; friend + &#x7C7B;&#x7684;&#x58F0;&#x660E;&#x90E8;&#x5206;&#x3002;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x7C7B;&#x4E3A;&#x53CB;&#x5143;&#x7C7B;&#x3002;&#x53CB;&#x5143;&#x7C7B;&#x6240;&#x6709;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x53CB;&#x5143;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+
+class Point2D
+{
+    friend void print(Point2D const&amp; that);
+    friend class Point3D;//&#x58F0;&#x660E;&#x53CB;&#x5143;&#x7C7B;
+public:
+    Point2D(double x = 0, double y = 0) :m_x(x), m_y(y)
+    {
+
+    };
+
+private:
+    double m_x;
+    double m_y;
+};
+class Point3D
+{
+public:
+    Point3D(double x = 0, double y = 0, double z = 0)
+    {
+        //&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Point2D&#x7C7B;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;
+        m_p.m_x = x;
+        m_p.m_y = y;
+        m_z = z;
+    }
+
+private:
+    Point2D m_p;
+    double m_z;
+
+public:
+    void print()
+    {
+        //&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Point2D&#x7C7B;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;
+        cout &lt;&lt; &quot;&#x7A7A;&#x95F4;&#x70B9;&#x5750;&#x6807;&#xFF1A;(&quot; &lt;&lt; m_p.m_x &lt;&lt; &quot;,&quot; &lt;&lt; m_p.m_y &lt;&lt; &quot;,&quot;&lt;&lt;m_z&lt;&lt;&quot;)&quot; &lt;&lt; endl;
+    }
+};
+void print(Point2D const&amp; that)
+{
+
+    cout &lt;&lt;&quot;&#x5E73;&#x9762;&#x70B9;&#x5750;&#x6807;&#xFF1A;(&quot;&lt;&lt; that.m_x &lt;&lt; &quot;,&quot; &lt;&lt; that.m_y &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+}
+
+int main()
+{
+    Point2D p1(1, 2);
+    print(p1);
+
+    Point3D p2(1, 2, 3);
+    p2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x53CB;&#x5143;&#x5173;&#x7CFB;&#x662F;&#x5355;&#x5411;&#x7684;&#xFF0C;&#x4E0D;&#x5177;&#x6709;&#x4F20;&#x9012;&#x6027;</p>
+</blockquote>
+<h1 id="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;">&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>operator+&#x8FD0;&#x7B97;&#x7B26;  &#xFF1A; &#x91CD;&#x8F7D;&#x8BE5;&#x8FD0;&#x7B97;&#x7B26;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+
+class Complex
+{
+    friend Complex&amp; operator+(Complex const&amp; c1, Complex const&amp; c2);
+public:
+    Complex(double real = 0, double vir = 0) :m_real(real), m_vir(vir){};
+
+private:
+    double m_real;
+    double m_vir;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;
+    /*Complex&amp; operator+(Complex const&amp; that)const
+    {
+        Complex tmp(that.m_real + this-&gt;m_real, that.m_vir + this-&gt;m_vir);
+        return tmp;
+    }*/
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+//&#x5916;&#x90E8;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;
+Complex&amp; operator+(Complex const&amp; c1, Complex const&amp; c2)
+{
+    Complex tmp(c1.m_real + c2.m_real, c1.m_vir + c1.m_vir);
+    return tmp;
+}
+
+int main()
+{
+
+    Complex c1(1, 2);
+    c1.print();//1+2i
+
+    Complex c2(2, 2);
+    c2.print();//2+2i
+
+    Complex c3 = c1 + c2;
+    c3.print();//3+4i
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x5355;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>&#x53CC;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x91CD;&#x8F7D;</p>
+<p>::&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26; .&#x6210;&#x5458;&#x8BBF;&#x95EE;&#x8FD0;&#x7B97;&#x7B26; .*&#x6210;&#x5458;&#x6307;&#x9488;&#x8FD0;&#x7B97;&#x7B26; sizeof&#x957F;&#x5EA6;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x91CD;&#x8F7D;</p>
+<p> &lt;&lt;&#x5DE6;&#x63D2;&#xFF0C;&gt;&gt;&#x53F3;&#x63D2;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>= () [] -&gt; -&gt;* &#x53EA;&#x80FD;&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x91CD;&#x8F7D;">&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>&#x907F;&#x514D;&#x81EA;&#x8D4B;&#x503C;</p>
+<p>&#x5206;&#x914D;&#x65B0;&#x8D44;&#x6E90;</p>
+<p>&#x62F7;&#x8D1D;&#x65B0;&#x5185;&#x5BB9;</p>
+<p>&#x91CA;&#x653E;&#x4E45;&#x8D44;&#x6E90;</p>
+<p>&#x8FD4;&#x56DE;&#x81EA;&#x5F15;&#x7528;</p>
+</blockquote>
+<h1 id="&#x9759;&#x6001;&#x6210;&#x5458;">&#x9759;&#x6001;&#x6210;&#x5458;</h1>
+<blockquote>
+<p>static&#x6210;&#x5458; &#xFF1A; </p>
+<p>1.&#x4E3A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x5171;&#x6709;&#xFF0C;&#x5C5E;&#x4E8E;&#x7C7B;&#x3002;&#x751F;&#x547D;&#x5468;&#x671F;&#x662F;&#x8FDB;&#x7A0B;&#x7EA7;&#x7684;</p>
+<p>2.&#x5185;&#x5B58;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x5206;&#x914D;&#x3002;</p>
+<p>3.&#x4F7F;&#x7528;&#x524D;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;</p>
+<p>4.&#x521D;&#x59CB;&#x5316;&#x4E0D;&#x80FD;&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26;&#x521D;&#x59CB;&#x5316; </p>
+<p>5.&#x521D;&#x59CB;&#x5316;&#xFF1A;  &#x503C;&#x7C7B;&#x578B; &#x7C7B;::&#x7C7B;&#x9759;&#x6001;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x540D; = &#x503C;;</p>
+</blockquote>
+<h1 id="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;">&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</h1>
+<blockquote>
+<p>&#x997F;&#x6C49;&#x5F0F;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x997F;&#x6C49;&#x5F0F;
+
+class Single
+{
+
+public:
+
+    static Single&amp; getInstabce()
+    {
+
+        return instance;
+    }
+private:
+    //&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x5C31;&#x521B;&#x5EFA;&#x4E86;
+    static Single instance;
+    int m_data;
+    Single(int data) :m_data(data)
+    {
+    }
+
+};
+Single Single::instance(1);//&#x521D;&#x59CB;&#x5316;
+int main()
+{
+    Single&amp; ldc = Single::getInstabce();
+    Single&amp; lsx = Single::getInstabce();
+    //&#x5F97;&#x5230;&#x7684;&#x5730;&#x5740;&#x4E00;&#x6837;
+    cout &lt;&lt; &quot;&amp;ldc:&quot; &lt;&lt; &amp;ldc &lt;&lt; endl;
+    cout &lt;&lt; &quot;&amp;lsx:&quot; &lt;&lt; &amp;lsx &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x61D2;&#x6C49;&#x5F0F;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x61D2;&#x6C49;&#x5F0F;
+
+class Single
+{
+
+public:
+
+    static Single&amp; getInstabce()
+    {
+        if (!instance)
+        {
+            //...TO DO
+            //&#x5728;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x518D;&#x5F00;&#x8F9F;&#x5185;&#x5B58;
+            instance = new Single();
+        }
+        return *instance;
+    }
+private:
+    //&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x53EA;&#x6709;&#x4E00;&#x4E2A;4&#x5B57;&#x8282;&#x7684;&#x6307;&#x9488;
+    static Single* instance;
+    Single()
+    {
+    }
+
+};
+Single* Single::instance = NULL;//&#x5148;&#x6307;&#x5411;&#x7A7A; 
+int main()
+{
+    Single&amp; ldc = Single::getInstabce();
+    Single&amp; lsx = Single::getInstabce();
+    //&#x5F97;&#x5230;&#x7684;&#x5730;&#x5740;&#x4E00;&#x6837;
+    cout &lt;&lt; &quot;&amp;ldc:&quot; &lt;&lt; &amp;ldc &lt;&lt; endl;
+    cout &lt;&lt; &quot;&amp;lsx:&quot; &lt;&lt; &amp;lsx &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x6210;&#x5458;&#x6307;&#x9488;">&#x6210;&#x5458;&#x6307;&#x9488;</h1>
+<blockquote>
+<p>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x76F8;&#x5BF9;&#x5730;&#x5740;&#xFF0C;&#x6307;&#x5411;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x6307;&#x9488;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Ldc
+{
+public:
+    Ldc(int age) :m_age(age){};
+
+public:
+    int m_age;
+};
+
+int main()
+{
+    Ldc l1 = Ldc(24);
+    int Ldc::*Pvalue = &amp;Ldc::m_age;
+    (l1.*Pvalue)++;
+    cout &lt;&lt; l1.m_age &lt;&lt; endl;//25
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x53BB;&#x5E38;-constcast">&#x53BB;&#x5E38; const_cast</h1>
+<blockquote>
+<p>&#x5F3A;&#x8F6C;&#x4E0D;&#x6539;&#x53D8;&#x539F;&#x6765;&#x7684;&#x53D8;&#x91CF;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+int main()
+{
+    const int rmb = 100;
+    int *temp = const_cast&lt;int*&gt;(&amp;rmb);
+    *temp = 200;
+
+    cout &lt;&lt; &quot;*temp:&quot; &lt;&lt; *temp &lt;&lt; endl;//200
+    cout &lt;&lt; &quot;rmb:&quot; &lt;&lt; rmb &lt;&lt; endl;//100
+
+    cout &lt;&lt; &quot;temp:&quot; &lt;&lt; temp &lt;&lt; &quot;   &quot; &lt;&lt; &quot;&amp;rmb:&quot; &lt;&lt; &amp;rmb &lt;&lt; endl;//&#x5730;&#x5740;&#x76F8;&#x540C;
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x5BC4;&#x5B58;&#x5668;&#x8BFB;&#x5185;&#x5B58;&#xFF0C;&#x518D;&#x4E22;&#x7ED9;&#x53D8;&#x91CF;&#x503C;&#xFF1B;&#x5BC4;&#x5B58;&#x5668;&#x770B;&#x5230; rmb &#x88AB;const&#x4FEE;&#x9970;&#x3002;&#x8BA4;&#x4E3A;&#x5185;&#x5B58;&#x662F;&#x4E0D;&#x53D8;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x628A;100&#x7ED9;&#x51FA;&#xFF1B;</p>
+<p>&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; volatile &#x4FEE;&#x9970;&#x53D8;&#x91CF;&#x4E3A;&#x5F02;&#x53D8;&#x7684;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+int main()
+{
+    volatile const int rmb = 100;
+    int *temp = const_cast&lt;int*&gt;(&amp;rmb);
+    *temp = 200;
+
+    cout &lt;&lt; &quot;*temp:&quot; &lt;&lt; *temp &lt;&lt; endl;//200
+    cout &lt;&lt; &quot;rmb:&quot; &lt;&lt; rmb &lt;&lt; endl;//200
+
+    cout &lt;&lt; &quot;temp:&quot; &lt;&lt; temp &lt;&lt; &quot;   &quot; &lt;&lt; &quot;&amp;rmb:&quot; &lt;&lt; (void*)&amp;rmb &lt;&lt; endl;//&#x5730;&#x5740;&#x76F8;&#x540C;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x7EE7;&#x627F;">&#x7EE7;&#x627F;</h1>
+<blockquote>
+<p>class &#x7C7B;&#x540D; :public &#x57FA;&#x7C7B;1,protected &#x57FA;&#x7C7B;2,private &#x57FA;&#x7C7B;3,......
+{}</p>
+<p>&#x5171;&#x6027;&#x548C;&#x4E2A;&#x6027;</p>
+<p>&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#x4E86;&#x7236;&#x7C7B;&#x7684;&#x5171;&#x6027;&#x6D3E;&#x751F;&#x4E86;&#x4E2A;&#x6027;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+
+class Human
+{
+public:
+    Human(const string&amp; name) :m_name(name){};
+
+private:
+    string m_name;
+public:
+    void print_name()
+    {
+        cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+    }
+};
+
+class Ldc :public Human
+{
+public:
+    Ldc(const string&amp; name, int age) :Human(name), m_age(age){};
+
+private:
+    int m_age;
+};
+
+int main()
+{
+    Ldc _ldc = Ldc(&quot;ldc&quot;, 18);
+    _ldc.print_name();
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>public &#x516C;&#x6709;&#x7EE7;&#x627F; &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; &#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5C5E;&#x6027;&#x4E0D;&#x53D8;</p>
+<p>protected &#x4FDD;&#x62A4;&#x7EE7;&#x627F;  &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; public&#x8F6C;&#x4E3A;protected&#x3002; protected&#x548C;private&#x4E0D;&#x53D8;</p>
+<p>private &#x79C1;&#x6709;&#x7EE7;&#x627F;  &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; private&#x4E0D;&#x53D8;&#x3002;public&#x548C;protected&#x8F6C;&#x4E3A;private</p>
+</blockquote>
+<h1 id="&#x7686;&#x7136;&#x6027;is-a">&#x7686;&#x7136;&#x6027;/is a</h1>
+<blockquote>
+<p>&#x5728;&#x516C;&#x6709;&#x7EE7;&#x627F;&#x4E0B;&#xFF0C;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x6216;&#x5F15;&#x7528;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x57FA;&#x7C7B;</p>
+<p>&#x5728;&#x6784;&#x9020;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5148;&#x6784;&#x9020;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;</p>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x6216;&#x5F15;&#x7528;&#x53BB;&#x63A5;&#x5B50;&#x7C7B;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5F53;&#x6210;&#x7236;&#x7C7B;&#x6765;&#x7528;&#xFF0C;&#x4F46;&#x4EC5;&#x9650;&#x4E8E;&#x5B50;&#x7C7B;&#x7684;&#x8BE5;&#x7236;&#x7C7B;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x5BF9;&#x8C61;&#xFF0C;&#x5B50;&#x7C7B;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;&#x548C;&#x5B50;&#x7C7B;&#x4E2D;&#x7684;&#x4E2A;&#x6027;&#x6210;&#x5458;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#x7F29;&#x5C0F;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x6765;&#x662F;&#x5B89;&#x5168;&#x7684;</p>
+<p>&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#x6269;&#x5927;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x6765;&#x662F;&#x5371;&#x9669;&#x7684;</p>
+</blockquote>
+<h1 id="&#x591A;&#x6001;">&#x591A;&#x6001;</h1>
+<blockquote>
+<p>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x4E0D;&#x540C;&#x573A;&#x666F;&#x4E0B;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;</p>
+<p>&#x865A;&#x51FD;&#x6570;&#xFF1A; &#x4F7F;&#x7528; <code>virtual</code>  &#x5173;&#x952E;&#x5B57;&#x58F0;&#x660E;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>&#x8986;&#x76D6;&#xFF1A;</p>
+<p>&#x5B50;&#x7C7B;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x57FA;&#x7C7B;&#x7684;&#x865A;&#x51FD;&#x6570;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x539F;&#x578B;&#xFF0C;&#x8BE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x865A;&#x51FD;&#x6570;&#x3002;&#x5BF9;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;&#x6784;&#x6210;&#x8986;&#x76D6;&#x3002;</p>
+<p>&#x8986;&#x76D6;&#x6761;&#x4EF6;&#xFF1A;</p>
+<p>1.&#x51FD;&#x6570;&#x4E3A;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF08;&#x975E;&#x9759;&#x6001;&#xFF09;</p>
+<p>2.&#x57FA;&#x7C7B;&#x4F7F;&#x7528; <code>virtual</code></p>
+<p>3.&#x51FD;&#x6570;&#x539F;&#x578B;&#x4E25;&#x683C;&#x76F8;&#x540C;</p>
+<p>&#x57FA;&#x7C7B;&#x6307;&#x9488;&#x8C03;&#x7528;&#x4F1A;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x6307;&#x5411;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x5206;&#x522B;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x73B0;&#x8C61;&#x79F0;&#x4E3A;&#x591A;&#x6001;</p>
+</blockquote>
+<h1 id="&#x865A;&#x6790;&#x6784;">&#x865A;&#x6790;&#x6784;</h1>
+<blockquote>
+<p>&#x907F;&#x514D;&#x7686;&#x7136;&#x6027;&#x5BFC;&#x81F4;&#x7684;&#x5B50;&#x7C7B;&#x5176;&#x4ED6;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;&#x548C;&#x4E2A;&#x6027;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</p>
+</blockquote>
+<h1 id="&#x7EAF;&#x865A;&#x51FD;&#x6570;">&#x7EAF;&#x865A;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x5F62;&#x5982; virtual &#x8FD4;&#x56DE;&#x503C; &#x51FD;&#x6570;&#x540D;&#xFF08;&#x5F62;&#x53C2;&#x8868;&#xFF09; =0;&#x7684;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x53EB;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x3002;</p>
+</blockquote>
+<h1 id="&#x62BD;&#x8C61;&#x7C7B;">&#x62BD;&#x8C61;&#x7C7B;</h1>
+<blockquote>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x79F0;&#x4E3A;&#x62BD;&#x8C61;&#x7C7B;&#x3002;</p>
+</blockquote>
+<h1 id="&#x7EAF;&#x62BD;&#x8C61;&#x7C7B;&#xFF08;&#x63A5;&#x53E3;&#x7C7B;&#xFF09;">&#x7EAF;&#x62BD;&#x8C61;&#x7C7B;&#xFF08;&#x63A5;&#x53E3;&#x7C7B;&#xFF09;</h1>
+<blockquote>
+<p>&#x6240;&#x6709;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;</p>
+<p>&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x8986;&#x76D6;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x865A;&#x51FD;&#x6570;&#x8868;">&#x865A;&#x51FD;&#x6570;&#x8868;</h1>
+<h1 id="io&#x6D41;">io&#x6D41;</h1>
+<blockquote>
+<p><code>cout</code> : &#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6D41;&#xFF08;&#x6709;&#x7F13;&#x51B2;&#x533A;&#xFF09;</p>
+<p><code>cerr</code> : &#x6807;&#x51C6;&#x9519;&#x8BEF;&#x6D41;&#xFF08;&#x65E0;&#x7F13;&#x51B2;&#x533A;&#xFF09;</p>
+<p><code>clog</code> : &#x6807;&#x51C6;&#x9519;&#x8BEF;&#x6D41;&#xFF08;&#x6709;&#x7F13;&#x51B2;&#x533A;&#xFF09;</p>
+<p><code>cin</code>  : &#x6807;&#x51C6;&#x8F93;&#x5165;&#x6D41;</p>
+<p><code>cout</code>&#x8F93;&#x51FA;&#x53EF;&#x4EE5;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;<code>cerr</code>&#x5FC5;&#x987B;&#x663E;&#x793A;&#x5728;&#x663E;&#x793A;&#x5668;&#x4E0A;</p>
+<p>&#x83B7;&#x53D6;&#x884C;
+<code>cin.getline(str/*&#x76EE;&#x6807;*/,count/*&#x5927;&#x5C0F;*/,endChar/*&#x7ED3;&#x675F;&#x5B57;&#x7B26;*/);</code></p>
+</blockquote>
+<h1 id="&#x5B57;&#x7B26;&#x4E32;&#x6D41;">&#x5B57;&#x7B26;&#x4E32;&#x6D41;</h1>
+<blockquote>
+<p>&#x5934;&#x6587;&#x4EF6; <code>&lt;sstream&gt;</code></p>
+</blockquote>
+<h1 id="&#x6587;&#x4EF6;&#x6D41;">&#x6587;&#x4EF6;&#x6D41;</h1>
+<blockquote>
+<p>&#x5934;&#x6587;&#x4EF6; <code>&lt;fstream&gt;</code></p>
+</blockquote>
+<h1 id="&#x5F02;&#x5E38;">&#x5F02;&#x5E38;</h1>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#x9519;&#x8BEF; &#x903B;&#x8F91;&#x9519;&#x8BEF; &#x529F;&#x80FD;&#x9519;&#x8BEF; &#x8BBE;&#x8BA1;&#x9519;&#x8BEF; &#x9700;&#x6C42;&#x4E0D;&#x7B26; &#x73AF;&#x5883;&#x5F02;&#x5E38; &#x64CD;&#x4F5C;&#x9519;&#x8BEF;</p>
+<p>&#x89E3;&#x51B3;&#xFF1A;</p>
+<p>1.&#x5229;&#x7528;&#x8FD4;&#x56DE;&#x503C; &#x4F8B;&#x5982;-1;</p>
+<p>2.<code>setjmp</code>/ <code>longjmp</code></p>
+<p>3.&#x629B;&#x51FA;-&#x6355;&#x83B7;&#x5F02;&#x5E38;  <code>throw</code> / <code>try-catch</code></p>
+<blockquote>
+<p>&#x6355;&#x83B7;&#x987A;&#x5E8F;&#xFF1A;&#x6839;&#x636E;&#x5F02;&#x5E38;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x5339;&#x914D;&#xFF0C;&#x5E76;&#x975E;&#x6700;&#x4F18;&#x5339;&#x914D;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x5B50;&#x7C7B;&#x7C7B;&#x578B;&#x7684;&#x5F02;&#x5E38;&#x7684;&#x6355;&#x83B7;&#x4E0D;&#x8981;&#x653E;&#x5728;&#x57FA;&#x7C7B;&#x7C7B;&#x578B;&#x5F02;&#x5E38;&#x6355;&#x83B7;&#x7684;&#x540E;&#x9762;</p>
+</blockquote>
+</blockquote>
+<h1 id="&#x6807;&#x51C6;&#x5E93;&#x5F02;&#x5E38;">&#x6807;&#x51C6;&#x5E93;&#x5F02;&#x5E38;</h1>
+<h1 id="rtti--&#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#x8BC6;&#x522B;">RTTI () &#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#x8BC6;&#x522B;</h1>
+<blockquote>
+<p>&#x53EA;&#x80FD;&#x7528;&#x5728;&#x5305;&#x542B;&#x865A;&#x51FD;&#x6570;&#x7684;&#x7C7B;</p>
+</blockquote>
+<h1 id="reinterpretcast-&#x91CD;&#x89E3;&#x91CA;&#x7C7B;&#x578B;">reinterpret_cast &#x91CD;&#x89E3;&#x91CA;&#x7C7B;&#x578B;</h1>
+<h1 id="staticcast&#x76EE;&#x6807;&#x7C7B;&#x578B;&#xFF08;&#x6E90;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF09;">static_cast&lt;&#x76EE;&#x6807;&#x7C7B;&#x578B;&gt;&#xFF08;&#x6E90;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF09;</h1>
+<blockquote>
+<p>&#x9690;&#x5F0F;&#x7C7B;&#x578B;&#x7684;&#x9006;&#x8F6C;&#x6362;</p>
+<p>&#x4E0B;&#x884C;&#x8F6C;&#x6362; &#x5411;&#x4E0B;&#x9020;&#x578B; &#x6CA1;&#x6709;RTTI &#x4E0D;&#x5B89;&#x5168;</p>
+</blockquote>
+<h1 id="dynamiccast&#x76EE;&#x6807;&#x7C7B;&#x578B;&#xFF08;&#x6E90;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF09;">dynamic_cast&lt;&#x76EE;&#x6807;&#x7C7B;&#x578B;&gt;&#xFF08;&#x6E90;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF09;</h1>
+<blockquote>
+<p>&#x5728;&#x6709;&#x865A;&#x51FD;&#x6570;&#x7684;&#x524D;&#x63D0;&#x4E0B; &#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8F6C;&#x6362; &#x6709;RTTI &#x4F1A;&#x6BD4;&#x8F83;&#x7C7B;&#x578B; &#x4F7F;&#x7528;typeid&#x6BD4;&#x8F83;&#x58F0;&#x660E;&#x548C;&#x5B9E;&#x9645;&#x7C7B;&#x578B; &#x5BF9;&#x4E8E;&#x6307;&#x9488;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x4F1A;&#x8FD4;&#x56DE;<code>nullptr</code>,&#x5BF9;&#x4E8E;&#x5F15;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#xFF0C;&#x4E0D;&#x4E00;&#x81F4;&#x629B;&#x51FA; <code>bad_typeid</code>&#x5F02;&#x5E38; &#x5B89;&#x5168;</p>
+</blockquote>
+<h1 id="typeid-&#x548C;-typeinfo&#x7C7B;">typeid &#x548C; type_info&#x7C7B;</h1>
+<blockquote>
+<p>typeid &#x53EF;&#x4EE5;&#x786E;&#x5B9A;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E3A;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#xFF0C;&#x548C;sizeof&#x7C7B;&#x4F3C;&#xFF0C;&#x63A5;&#x6536;&#x7C7B;&#x540D;&#x548C;&#x7ED3;&#x679C;&#x548C;&#x5BF9;&#x8C61;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;type_info&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;</p>
+<p>typeid(&#x7C7B;&#x540D;) == typeid(&#x5BF9;&#x8C61;&#x6307;&#x9488;) &#xFF0C; &#x5BF9;&#x8C61;&#x6307;&#x9488;&#x4E3A;&#x7A7A;&#xFF0C;&#x5F15;&#x53D1;bad_typeid&#x5F02;&#x5E38;</p>
+</blockquote>
+<h1 id="c11">c++11</h1>
+<blockquote>
+<p>1.nullptr  &#x7A7A;&#x6307;&#x9488;</p>
+<p>2.<code>using dint = int;</code> //&#x7C7B;&#x578B;&#x522B;&#x540D;</p>
+<p>3.auto&#x7C7B;&#x578B;&#x4FEE;&#x9970;&#x7B26; <code>auto a = 10;//typeid(a).name() == int</code></p>
+<p>4.<code>long long &#x7C7B;&#x578B;</code> <code>unsigned long long &#x7C7B;&#x578B;</code> <code>char16_t &#x7C7B;&#x578B;</code> <code>char32_t &#x7C7B;&#x578B;</code></p>
+<p>5.&#x7C7B;&#x5185;&#x521D;&#x59CB;&#x5316;</p>
+</blockquote>
+<pre><code>class Ldc
+{
+public:
+    int m_age { 24 };
+};
+
+int main()
+{
+    Ldc _ldc;
+    cout &lt;&lt; _ldc.m_age &lt;&lt; endl;
+    return 0;
+}
+</code></pre><blockquote>
+<p>6.&#x8303;&#x56F4;for &#x5FAA;&#x73AF;</p>
+</blockquote>
+<pre><code>for(auto i : arr)
+{
+    cout &lt;&lt; i &lt;&lt; endl;
+}
+</code></pre><blockquote>
+<p>7.&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x540E;&#x7F6E;</p>
+<p>8.&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570; <code>default</code></p>
+<p>9.&#x5DF2;&#x5220;&#x9664;&#x51FD;&#x6570; <code>delete</code></p>
+<p>10.&#x59D4;&#x6258;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+<p>11.&#x53F3;&#x503C;&#x5F15;&#x7528; &#x7528;&#x4E8E;&#x79FB;&#x52A8;&#x6784;&#x9020; &#x79FB;&#x52A8;&#x6570;&#x636E;  </p>
+</blockquote>
+<pre><code>int num = 10;
+int &amp;lnum = num;//&#x5DE6;&#x503C;&#x5F15;&#x7528;
+int &amp;&amp;rnum = 10;//&#x53F3;&#x503C;&#x5F15;&#x7528;
+</code></pre><blockquote>
+<p>12.lambda &#x8868;&#x8FBE;&#x5F0F;</p>
+</blockquote>
+<pre><code>auto sum = [](int a,int b) { return a+b; };
+cout &lt;&lt; sum(1,3) &lt;&lt; endl;
+</code></pre><blockquote>
+<p>13.&#x667A;&#x80FD;&#x6307;&#x9488;</p>
+<p>14.<code>override</code>  &#x786E;&#x4FDD;&#x591A;&#x6001; &#x5B50;&#x7C7B;&#x865A;&#x51FD;&#x6570;&#x8986;&#x76D6;&#x7236;&#x7C7B;&#x865A;&#x51FD;&#x6570;</p>
+<p>15.<code>final</code>  &#x82E5;&#x4FEE;&#x9970;&#x7C7B; &#x5219;&#x8BE5;&#x7C7B;&#x4E0D;&#x80FD;&#x88AB;&#x7EE7;&#x627F;&#x3002;&#x82E5;&#x4FEE;&#x9970;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x8BE5;&#x865A;&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x88AB;&#x8986;&#x76D6;</p>
+</blockquote>
+<h1 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h1>
+<blockquote>
+<p>&#x6CDB;&#x578B;&#x5141;&#x8BB8;&#x5F3A;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x5B9A;&#x4E49;&#x4E00;&#x90E8;&#x5206;&#x53EF;&#x53D8;&#x90E8;&#x5206;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x5FC5;&#x987B;&#x58F0;&#x660E;</p>
+<p>&#x901A;&#x8FC7;&#x4E8C;&#x6B21;&#x7F16;&#x8BD1;&#x5B9E;&#x73B0;</p>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F; &#xFF1A; &#x7C7B;&#x578B;&#x53C2;&#x6570;&#x5316;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max(T a, T b)
+{
+    return a &gt; b ? a : b;
+}
+
+
+int main()
+{
+
+    cout &lt;&lt; max&lt;int&gt;(11, 22) &lt;&lt; endl;//22
+    cout &lt;&lt; max&lt;double&gt;(11.11, 22.22) &lt;&lt; endl;//22.22
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7684;&#x9690;&#x5F0F;&#x63A8;&#x65AD;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max(T a, T b)
+{
+    cout &lt;&lt; typeid(T).name() &lt;&lt; endl;
+    return a &gt; b ? a : b;
+}
+
+
+int main()
+{
+
+    cout &lt;&lt; max(11, 22) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A;int
+    cout &lt;&lt; max(11.11, 22.22) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A;double
+    cout &lt;&lt; max(&quot;hello&quot;, &quot;would&quot;) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A; char const*  &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x662F;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5730;&#x5740;&#x7684;&#x5927;&#x5C0F;&#xFF0C; &#x5E76;&#x4E0D;&#x662F;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5927;&#x5C0F;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x91CD;&#x8F7D;</p>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5148;&#x9009;&#x62E9;&#x666E;&#x901A;&#x7684;&#x5177;&#x4F53;&#x7684;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max( T a,  T b)
+{
+    cout &lt;&lt; &quot;T &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return a &gt; b ? a : b;
+}
+
+template&lt;typename T&gt;
+T* max(T* const a, T* const b)
+{
+    cout &lt;&lt; &quot;T* &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return *a &gt; *b ? a : b;
+}
+
+
+const char* const&amp; max(const char* const&amp; a, const char* const&amp; b)
+{
+    cout &lt;&lt; &quot;const char* &#x7248;&#x672C; &#x666E;&#x901A;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return strcmp(a, b) &gt; 0 ? a : b;
+}
+
+
+int main()
+{
+
+    const char* a = &quot;abc&quot;;
+    const char* b = &quot;abd&quot;;
+
+    cout &lt;&lt; max(a, b) &lt;&lt; endl;//&#x666E;&#x901A;&#x51FD;&#x6570;
+    cout &lt;&lt; max&lt;const char*&gt;(a, b) &lt;&lt; endl;// T &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;
+    cout &lt;&lt; max&lt;const char&gt;(a, b) &lt;&lt; endl;//T* &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x7C7B;&#x6A21;&#x677F;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+template&lt;typename T&gt;
+class Ldc
+{
+public:
+    Ldc(T data)
+    {
+        m_data = data;
+    };
+private:
+    T m_data;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Ldc&lt;int&gt; ldc(20);
+    ldc.print();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x6240;&#x6709;&#x975E;&#x9759;&#x6001;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;</p>
+<p>&#x7C7B;&#x5916;&#x5B9A;&#x4E49;&#x6210;&#x5458;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5E26;&#x4E0A; <code>template &lt;typename T&gt;</code></p>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570; &#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x4E0D;&#x53EF;&#x4EE5;&#x5206;&#x5F00;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;</p>
+<p>&#x53CB;&#x5143;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x5206;&#x5F00; &#x9700;&#x8981;&#x589E;&#x52A0;&#x6CDB;&#x578B;&#x652F;&#x6301;</p>
+</blockquote>
+<pre><code>template&lt;typename T&gt;
+class Ldc;
+
+template&lt;typename T&gt;
+void lookData(Ldc&lt;T&gt; const&amp; that)
+{
+    cout &lt;&lt; that.m_data &lt;&lt; endl;
+}
+
+template&lt;typename T&gt;
+class Ldc
+{
+public:
+    friend void lookData &lt;T&gt;(Ldc&lt;T&gt; const&amp; that);
+    Ldc(T data)
+    {
+        m_data = data;
+    };
+private:
+    T m_data;
+
+};
+
+
+
+int main()
+{
+    Ldc&lt;int&gt; iLdc(20);
+    lookData(iLdc);//20
+
+    Ldc&lt;char&gt; cLdc(&apos;a&apos;);
+    lookData(cLdc);//&apos;a&apos;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7C7B;&#x7684;&#x7EE7;&#x627F;</p>
+<p>1.&#x7236;&#x7C7B;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5217;&#x8868;&#x6765;&#x521D;&#x59CB;&#x5316;</p>
+<p>2.&#x7EE7;&#x627F;&#x65F6;&#xFF0C;&#x7236;&#x7C7B;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x5B50;&#x7C7B;&#x4E0D;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x77E5;&#x9053;&#x7236;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+</blockquote>
+<pre><code>template &lt;typename T&gt;
+class Parent
+{
+public:
+    Parent(T data)
+    {
+        m_data = data;
+    }
+
+private:
+    T m_data;
+
+public:
+    void lookData()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+class Son :public Parent&lt;int&gt;/*&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x7C7B;&#x578B;*/
+{
+public:
+    Son(int data) :Parent(data){};/*&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x521D;&#x59CB;&#x5316;*/
+private:
+
+};
+
+
+
+int main()
+{
+    Son son(20);
+    son.lookData();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>3.&#x5982;&#x679C;&#x5B50;&#x7C7B;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x8981;&#x4E48;&#x6307;&#x5B9A;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8981;&#x4E48;&#x7528;&#x5B50;&#x7C7B;&#x7684;&#x6CDB;&#x578B;&#x6765;&#x6307;&#x5B9A;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;</p>
+</blockquote>
+<pre><code>template &lt;typename T&gt;
+class Parent
+{
+public:
+    Parent(T data)
+    {
+        m_data = data;
+    }
+
+private:
+    T m_data;
+
+public:
+    void lookData()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+
+template &lt;typename T&gt;
+class Son :public Parent&lt;T&gt;/*&#x7528;&#x5B50;&#x7C7B;&#x7684;&#x6CDB;&#x578B;&#x6765;&#x6307;&#x5B9A;&#x7C7B;&#x578B;*/
+{
+public:
+    Son(int data) :Parent&lt;T&gt;(data){};
+private:
+
+};
+
+
+
+int main()
+{
+    Son&lt;int&gt; son(20);
+    son.lookData();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7279;&#x5316;</p>
+<p>&#x5BF9;&#x666E;&#x901A;&#x7248;&#x672C;&#x7684;&#x8865;&#x5145;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../C/" class="navigation navigation-prev " aria-label="Previous page: C">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../day18-12-15/" class="navigation navigation-next " aria-label="Next page: English">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"C++","level":"1.3","depth":1,"next":{"title":"English","level":"1.4","depth":1,"path":"day18-12-15/index.md","ref":"./day18-12-15/index.md","articles":[]},"previous":{"title":"C","level":"1.2","depth":1,"path":"C/index.md","ref":"./C/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/index.md","mtime":"2018-12-26T15:54:43.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T04:11:06.200Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
