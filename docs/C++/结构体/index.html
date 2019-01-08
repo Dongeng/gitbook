@@ -1,0 +1,569 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>结构体 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../bool和内联函数/" />
+    
+    
+    <link rel="prev" href="../命名空间/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../C/">
+            
+                <a href="../../C/">
+            
+                    
+                    C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../命名空间/">
+            
+                <a href="../命名空间/">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../bool和内联函数/">
+            
+                <a href="../bool和内联函数/">
+            
+                    
+                    bool和内联函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../重载/">
+            
+                <a href="../重载/">
+            
+                    
+                    重载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../缺省/">
+            
+                <a href="../缺省/">
+            
+                    
+                    缺省
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../哑元/">
+            
+                <a href="../哑元/">
+            
+                    
+                    哑元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../引用/">
+            
+                <a href="../引用/">
+            
+                    
+                    引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../动态内存分配/">
+            
+                <a href="../动态内存分配/">
+            
+                    
+                    动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../io流/">
+            
+                <a href="../io流/">
+            
+                    
+                    io流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../异常/">
+            
+                <a href="../异常/">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../C++11/">
+            
+                <a href="../C++11/">
+            
+                    
+                    C++11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../面向对象/">
+            
+                <a href="../面向对象/">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../泛型/">
+            
+                <a href="../泛型/">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../English/">
+            
+                <a href="../../English/">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../数据结构/">
+            
+                <a href="../../数据结构/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../数据结构/STL/">
+            
+                <a href="../../数据结构/STL/">
+            
+                    
+                    STL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../数据结构/哈希表/">
+            
+                <a href="../../数据结构/哈希表/">
+            
+                    
+                    哈希表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../算法/">
+            
+                <a href="../../算法/">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >结构体</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7ED3;&#x6784;&#x4F53;">&#x7ED3;&#x6784;&#x4F53;</h1>
+<h1 id="&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;">&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;</h1>
+<blockquote>
+<p>&#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x5173;&#x952E;&#x5B57;&#x4E86;</p>
+<p>C++&#x7ED3;&#x6784;&#x652F;&#x6301;&#x51FD;&#x6570;&#x6210;&#x5458;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+struct student
+{
+    char* name;
+    void showName()
+    {
+        cout &lt;&lt; name &lt;&lt; endl;
+    }
+};
+int main()
+{
+    student s = { &quot;ldc&quot; };
+    s.showName();
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x533F;&#x540D;&#x8054;&#x5408;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+int main()
+{
+    union
+    {
+        int i;
+        char c;
+    };
+    i = 65;
+    cout &lt;&lt; c &lt;&lt; endl;//A
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x679A;&#x4E3E;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+enum Color
+{
+    RED,//1
+    BLUE,//2
+    BLACK//3
+};
+
+int main()
+{
+    Color c = RED;
+    return 0;
+}
+
+#endif
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../命名空间/" class="navigation navigation-prev " aria-label="Previous page: 命名空间">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../bool和内联函数/" class="navigation navigation-next " aria-label="Next page: bool和内联函数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"结构体","level":"1.3.2","depth":2,"next":{"title":"bool和内联函数","level":"1.3.3","depth":2,"path":"C++/bool和内联函数/index.md","ref":"./C++/bool和内联函数/index.md","articles":[]},"previous":{"title":"命名空间","level":"1.3.1","depth":2,"path":"C++/命名空间/index.md","ref":"./C++/命名空间/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/结构体/index.md","mtime":"2019-01-08T13:19:41.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-08T13:30:12.241Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1237 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>面向对象 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../泛型/" />
+    
+    
+    <link rel="prev" href="../C++11/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../C/">
+            
+                <a href="../../C/">
+            
+                    
+                    C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../命名空间/">
+            
+                <a href="../命名空间/">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../结构体/">
+            
+                <a href="../结构体/">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../bool和内联函数/">
+            
+                <a href="../bool和内联函数/">
+            
+                    
+                    bool和内联函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../重载/">
+            
+                <a href="../重载/">
+            
+                    
+                    重载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../缺省/">
+            
+                <a href="../缺省/">
+            
+                    
+                    缺省
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../哑元/">
+            
+                <a href="../哑元/">
+            
+                    
+                    哑元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../引用/">
+            
+                <a href="../引用/">
+            
+                    
+                    引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../动态内存分配/">
+            
+                <a href="../动态内存分配/">
+            
+                    
+                    动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../io流/">
+            
+                <a href="../io流/">
+            
+                    
+                    io流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../异常/">
+            
+                <a href="../异常/">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../C++11/">
+            
+                <a href="../C++11/">
+            
+                    
+                    C++11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../泛型/">
+            
+                <a href="../泛型/">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../English/">
+            
+                <a href="../../English/">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../数据结构/">
+            
+                <a href="../../数据结构/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../数据结构/STL/">
+            
+                <a href="../../数据结构/STL/">
+            
+                    
+                    STL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../数据结构/哈希表/">
+            
+                <a href="../../数据结构/哈希表/">
+            
+                    
+                    哈希表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../算法/">
+            
+                <a href="../../算法/">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >面向对象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;">&#x9762;&#x5411;&#x5BF9;&#x8C61;</h1>
+<h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;">&#x9762;&#x5411;&#x5BF9;&#x8C61;</h1>
+<blockquote>
+<p>&#x9002;&#x5408;&#x5F00;&#x53D1;&#x5927;&#x578B;&#x8F6F;&#x4EF6;</p>
+<p>&#x6570;&#x636E;&#x62BD;&#x8C61;&#xFF0C;&#x4EE3;&#x7801;&#x590D;&#x7528;&#xFF0C;&#x63D0;&#x5347;&#x6548;&#x7387;&#xFF0C;&#x51CF;&#x4F4E;&#x6210;&#x672C;</p>
+<p>&#x4E09;&#x5927;&#x7279;&#x6027;&#xFF1A;&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;</p>
+<p>&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h1 id="&#x7C7B;">&#x7C7B;</h1>
+<blockquote>
+<p>&#x62E5;&#x6709;&#x76F8;&#x540C;&#x5C5E;&#x6027;&#x548C;&#x884C;&#x4E3A;&#x7684;&#x4E00;&#x7EC4;&#x5BF9;&#x8C61;</p>
+<p>&#x7C7B;&#x662F;&#x4E00;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x8868;&#x793A;&#x5C5E;&#x6027;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x8868;&#x793A;&#x884C;&#x4E3A;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>&#x7C7B;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x662F;&#x7C7B;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x4F8B;</p>
+<p>class &#x7C7B;&#x540D; :public/protected/private&#xFF08;&#x7EE7;&#x627F;&#x65B9;&#x5F0F;&#xFF09; &#x57FA;&#x7C7B;</p>
+<p>{</p>
+<p>&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x9650;&#x5B9A;&#x7B26;&#xFF1A;</p>
+<p>   &#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>   &#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>}</p>
+<p>public:&#x5916;&#x90E8;&#xFF0C;&#x81EA;&#x5DF1;&#x4EE5;&#x53CA;&#x6D3E;&#x751F;&#x7C7B;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>protected:&#x5916;&#x90E8;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x81EA;&#x5DF1;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>private:&#x5916;&#x90E8;&#x548C;&#x6D3E;&#x751F;&#x7C7B;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x53EA;&#x6709;&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
+<p>&#x7C7B;&#x7684;&#x6210;&#x5458;&#x9ED8;&#x8BA4;&#x662F;&#x88AB;private&#x4FEE;&#x9970;</p>
+<p>&#x5C01;&#x88C5;&#xFF1A;&#x5C06;&#x5B9E;&#x73B0;&#x7684;&#x7EC6;&#x8282;&#x9690;&#x85CF;&#xFF0C;&#x66B4;&#x9732;&#x516C;&#x6709;&#x63A5;&#x53E3;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Ldc
+{
+public:
+    int m_age;
+    void setAge(int age)
+    {
+        m_age = age;
+    }
+    int getAge()
+    {
+        return m_age;
+    }
+};
+
+int main()
+{
+    //&#x6808;&#x533A;&#x5BF9;&#x8C61;
+    Ldc z_ldc;
+    z_ldc.setAge(24);
+    cout &lt;&lt; z_ldc.getAge() &lt;&lt; endl;
+
+    //&#x5806;&#x533A;&#x5BF9;&#x8C61;
+    Ldc* d_ldc = new Ldc;
+    d_ldc-&gt;setAge(24);
+    cout &lt;&lt; d_ldc-&gt;getAge() &lt;&lt; endl;
+    delete d_ldc;
+    d_ldc = NULL;
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x4E3A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x8D4B;&#x521D;&#x503C;&#xFF0C;&#x5206;&#x914D;&#x8D44;&#x6E90;&#xFF0C;&#x8BBE;&#x7F6E;&#x5BF9;&#x8C61;&#x7684;&#x521D;&#x59CB;&#x72B6;&#x6001;</p>
+<p>&#x51FD;&#x6570;&#x540D;&#x4E0E;&#x7C7B;&#x540C;&#x540D;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65F6;&#x81EA;&#x52A8;&#x8C03;&#x7528;</p>
+<p>&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x4E3A;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF08;&#x5148;&#x8BA1;&#x7B97;&#x5BF9;&#x8C61;&#x6240;&#x9700;&#x7684;&#x5185;&#x5B58;&#xFF09;</p>
+<p>2.&#x6784;&#x9020;&#x57FA;&#x7C7B;&#x3002;&#xFF08;&#x5982;&#x679C;&#x6709;&#x57FA;&#x7C7B;&#xFF09;</p>
+<p>3.&#x6784;&#x9020;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>4.&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x91CD;&#x8F7D;&#xFF1A;&#x82E5;&#x4E00;&#x4E2A;&#x7C7B;&#x65E0;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x82E5;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x6790;&#x6784;&#x51FD;&#x6570;">&#x6790;&#x6784;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x7528;&#x4E8E;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5728;&#x5BF9;&#x8C61;&#x9500;&#x6BC1;&#x65F6;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#xFF0C;&#x65E0;&#x53C2;&#xFF0C;&#x65E0;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;</p>
+<p>&#x9500;&#x6BC1;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>1.&#x6267;&#x884C;&#x6790;&#x6784;&#x51FD;&#x6570;&#x4EE3;&#x7801;</p>
+<p>2.&#x6790;&#x6784;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
+<p>3.&#x6790;&#x6784;&#x57FA;&#x7C7B;&#x90E8;&#x5206;</p>
+<p>4.&#x91CA;&#x653E;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x6240;&#x5360;&#x5185;&#x5B58;</p>
+</blockquote>
+<h1 id="this">this</h1>
+<blockquote>
+<p>this&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x7684;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x662F;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;&#x5F53;&#x524D;&#x7684;&#x5BF9;&#x8C61;</p>
+</blockquote>
+<h1 id="&#x5E38;&#x6210;&#x5458;">&#x5E38;&#x6210;&#x5458;</h1>
+<blockquote>
+<p>&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF1A;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x521D;&#x59CB;&#x5316;&#x8868;&#x6765;&#x8D4B;&#x503C;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x540E;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;</p>
+<p>&#x6BCF;&#x4E2A;&#x91CD;&#x8F7D;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x90FD;&#x9700;&#x521D;&#x59CB;&#x5316;&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x786E;&#x4FDD;&#x5E38;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x6709;&#x503C;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std; 
+
+class Human
+{
+public:
+    Human(string const&amp; name) :m_name(name){};
+
+private:
+    const string m_name;
+public:
+    void look_name()
+    {
+        cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(&quot;ldc&quot;);
+    ldc.look_name();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF1A;&#x5728;&#x5706;&#x62EC;&#x53F7;&#x540E;&#x9762;&#x52A0;&#x4E2A;const &#x4FEE;&#x9970;this&#x53C2;&#x6570;&#xFF0C;&#x5373;&#x4E0D;&#x80FD;&#x901A;&#x8FC7;this&#x6307;&#x9488;&#x4FEE;&#x6539;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x9664;&#x975E;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x88AB;mutable&#x4FEE;&#x9970;</p>
+<p>&#x548C;&#x666E;&#x901A;&#x540C;&#x540D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x6784;&#x6210;&#x91CD;&#x8F7D;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Human
+{
+public:
+    Human(int age) :m_age(age){};
+
+private:
+    int m_age;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()
+    {
+        cout &lt;&lt; m_age++ &lt;&lt; endl;
+    }
+    //&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void c_look_name()const
+    {
+        //&#x4E0D;&#x53EF;&#x4FEE;&#x6539;
+        //cout &lt;&lt; m_age++ &lt;&lt; endl;
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(24);
+    ldc.c_look_name();//24
+    ldc.look_name();//24
+    ldc.c_look_name();//25
+
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x5E38;&#x5BF9;&#x8C61;">&#x5E38;&#x5BF9;&#x8C61;</h1>
+<blockquote>
+<p>&#x88AB;const &#x4FEE;&#x9970;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x8C61;&#x6307;&#x9488;&#x6216;&#x5BF9;&#x8C61;&#x5F15;&#x7528;</p>
+<p>&#x5E38;&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x8C03;&#x7528;&#x5E38;&#x51FD;&#x6570;&#xFF0C;&#x975E;&#x5E38;&#x5BF9;&#x8C61;&#x5373;&#x53EF;&#x8C03;&#x7528;&#x5E38;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x975E;&#x5E38;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Human
+{
+public:
+    Human(int age) :m_age(age){};
+
+private:
+    int m_age;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()
+    {
+        cout &lt;&lt; m_age++ &lt;&lt; endl;
+    }
+    //&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void c_look_name()const
+    {
+        //&#x4E0D;&#x53EF;&#x4FEE;&#x6539;
+        //cout &lt;&lt; m_age++ &lt;&lt; endl;
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+    //&#x91CD;&#x8F7D;&#x7684;&#x5E38;&#x6210;&#x5458;&#x51FD;&#x6570;
+    void look_name()const
+    {
+        cout &lt;&lt; m_age &lt;&lt; endl;
+    }
+};
+
+
+int main()
+{
+    Human ldc = Human(24);
+    ldc.c_look_name();//24
+    ldc.look_name();//24
+    ldc.c_look_name();//25
+
+    const Human _ldc = Human(24);
+    _ldc.look_name();//24
+    _ldc.look_name();//24
+
+    return 0;
+}
+#endif
+</code></pre><h1 id="&#x62F7;&#x8D1D;&#x6784;&#x9020;">&#x62F7;&#x8D1D;&#x6784;&#x9020;</h1>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    Complex(double real, double vir = 0) :m_real(real), m_vir(vir){};
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(2.5);//&#x663E;&#x793A;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020;
+    c1.print();
+
+    Complex c2 = 2.5;//&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020; &#x5B9E;&#x9645;&#x8BED;&#x53E5;&#x4E3A;  Complex c2 = Complex (2.5);,&#x7528;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6784;&#x9020;&#x7684;&#x533F;&#x540D;&#x53D8;&#x91CF;&#x6765;&#x8F6C;&#x6362;
+    c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>explicit&#xFF1A;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    //&#x7528;explicit&#x4FEE;&#x9970;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;
+    explicit Complex(double real, double vir = 0) :m_real(real), m_vir(vir){};
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(2.5);//&#x663E;&#x793A;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020;
+    c1.print();
+
+    //Complex c2 = 2.5;//&#x9690;&#x5F0F;&#x8C03;&#x7528;&#x5355;&#x53C2;&#x6784;&#x9020; &#x5B9E;&#x9645;&#x8BED;&#x53E5;&#x4E3A;  Complex c2 = Complex (2.5);,&#x7528;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x6784;&#x9020;&#x7684;&#x533F;&#x540D;&#x53D8;&#x91CF;&#x6765;&#x8F6C;&#x6362; &#x82E5;&#x5355;&#x53C2;&#x6784;&#x9020;&#x7528;explicit&#x4FEE;&#x9970;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x9690;&#x5F0F;&#x8C03;&#x7528;
+    //c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x62F7;&#x8D1D;&#x6784;&#x9020;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+class Complex
+{
+public:
+    //&#x666E;&#x901A;&#x6784;&#x9020;
+    Complex(double real, double vir)
+    {
+        cout &lt;&lt; &quot;&#x8C03;&#x7528;&#x666E;&#x901A;&#x6784;&#x9020;&quot; &lt;&lt; endl;
+        this-&gt;m_real = real;
+        this-&gt;m_vir = vir;
+    }
+    //&#x62F7;&#x8D1D;&#x6784;&#x9020;
+    Complex(Complex const&amp; that)
+    {
+        cout &lt;&lt; &quot;&#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;&quot; &lt;&lt; endl;
+        this-&gt;m_real = that.m_real;
+        this-&gt;m_vir = that.m_vir;
+    };
+private:
+    double m_real;
+    double m_vir;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Complex c1(1, 2.3);//&#x8C03;&#x7528;&#x666E;&#x901A;&#x6784;&#x9020;
+    c1.print();
+    Complex c2 = c1;//&#x8C03;&#x7528;&#x62F7;&#x8D1D;&#x6784;&#x9020;  &#x9690;&#x5F0F;&#x8C03;&#x7528;  Complex c2 = Complex (c1);
+    c2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x82E5;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x7684;&#x62F7;&#x8D1D;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x6D45;&#x62F7;&#x8D1D;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;">&#x6D45;&#x62F7;&#x8D1D;&#xFF0C;&#x6DF1;&#x62F7;&#x8D1D;</h1>
+<blockquote>
+<p>&#x6D45;&#x62F7;&#x8D1D;&#xFF1A;&#x5BF9;&#x5185;&#x5B58;&#x5730;&#x5740;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x6307;&#x9488;&#x548C;&#x539F;&#x6765;&#x7684;&#x6307;&#x9488;&#x6307;&#x5411;&#x540C;&#x4E00;&#x7247;&#x5185;&#x5B58;&#xFF0C;&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x671F;&#x4E2D;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x53BB;&#x91CA;&#x653E;&#x5185;&#x5B58;&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x4ED6;&#x6307;&#x9488;&#x90FD;&#x4F1A;&#x53D8;&#x6210;&#x91CE;&#x6307;&#x9488;</p>
+<p>&#x6DF1;&#x62F7;&#x8D1D;&#xFF1A;&#x5BF9;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x7684;&#x590D;&#x5236;&#xFF0C;&#x62F7;&#x8D1D;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x76F8;&#x540C;&#xFF0C;&#x5185;&#x5B58;&#x5730;&#x5740;&#x4E0D;&#x540C;&#x3002;&#x5373;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x4E2A;&#x4F53;&#x3002;&#x4E92;&#x4E0D;&#x5F71;&#x54CD;&#xFF0C;&#x4E92;&#x4E0D;&#x5E72;&#x6D89;&#x3002;</p>
+</blockquote>
+<h1 id="&#x53CB;&#x5143;">&#x53CB;&#x5143;</h1>
+<blockquote>
+<p>&#x53CB;&#x5143;&#x51FD;&#x6570; &#xFF1A; friend + &#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x90E8;&#x5206;&#x3002;&#x5373;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E3A;&#x53CB;&#x5143;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+class Ldc
+{
+    friend void print(Ldc const&amp; that);//&#x58F0;&#x660E;&#x53CB;&#x5143;&#xFF0C;
+public:
+    Ldc(int age) :m_age(age)
+    {
+
+    };
+
+private:
+
+    int m_age;
+
+};
+
+void print(Ldc const&amp; that)
+{
+    cout &lt;&lt; that.m_age &lt;&lt; endl;//&#x53CB;&#x5143;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;that&#x5BF9;&#x8C61;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;m_age;
+}
+
+
+int main()
+{
+    Ldc ldc = 25;
+    print(ldc);
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x53CB;&#x5143;&#x7C7B;&#xFF1A; friend + &#x7C7B;&#x7684;&#x58F0;&#x660E;&#x90E8;&#x5206;&#x3002;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x7C7B;&#x4E3A;&#x53CB;&#x5143;&#x7C7B;&#x3002;&#x53CB;&#x5143;&#x7C7B;&#x6240;&#x6709;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x53CB;&#x5143;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+
+class Point2D
+{
+    friend void print(Point2D const&amp; that);
+    friend class Point3D;//&#x58F0;&#x660E;&#x53CB;&#x5143;&#x7C7B;
+public:
+    Point2D(double x = 0, double y = 0) :m_x(x), m_y(y)
+    {
+
+    };
+
+private:
+    double m_x;
+    double m_y;
+};
+class Point3D
+{
+public:
+    Point3D(double x = 0, double y = 0, double z = 0)
+    {
+        //&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Point2D&#x7C7B;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;
+        m_p.m_x = x;
+        m_p.m_y = y;
+        m_z = z;
+    }
+
+private:
+    Point2D m_p;
+    double m_z;
+
+public:
+    void print()
+    {
+        //&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Point2D&#x7C7B;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;
+        cout &lt;&lt; &quot;&#x7A7A;&#x95F4;&#x70B9;&#x5750;&#x6807;&#xFF1A;(&quot; &lt;&lt; m_p.m_x &lt;&lt; &quot;,&quot; &lt;&lt; m_p.m_y &lt;&lt; &quot;,&quot;&lt;&lt;m_z&lt;&lt;&quot;)&quot; &lt;&lt; endl;
+    }
+};
+void print(Point2D const&amp; that)
+{
+
+    cout &lt;&lt;&quot;&#x5E73;&#x9762;&#x70B9;&#x5750;&#x6807;&#xFF1A;(&quot;&lt;&lt; that.m_x &lt;&lt; &quot;,&quot; &lt;&lt; that.m_y &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+}
+
+int main()
+{
+    Point2D p1(1, 2);
+    print(p1);
+
+    Point3D p2(1, 2, 3);
+    p2.print();
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x53CB;&#x5143;&#x5173;&#x7CFB;&#x662F;&#x5355;&#x5411;&#x7684;&#xFF0C;&#x4E0D;&#x5177;&#x6709;&#x4F20;&#x9012;&#x6027;</p>
+</blockquote>
+<h1 id="&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;">&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>operator+&#x8FD0;&#x7B97;&#x7B26;  &#xFF1A; &#x91CD;&#x8F7D;&#x8BE5;&#x8FD0;&#x7B97;&#x7B26;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+
+class Complex
+{
+    friend Complex&amp; operator+(Complex const&amp; c1, Complex const&amp; c2);
+public:
+    Complex(double real = 0, double vir = 0) :m_real(real), m_vir(vir){};
+
+private:
+    double m_real;
+    double m_vir;
+public:
+    //&#x6210;&#x5458;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;
+    /*Complex&amp; operator+(Complex const&amp; that)const
+    {
+        Complex tmp(that.m_real + this-&gt;m_real, that.m_vir + this-&gt;m_vir);
+        return tmp;
+    }*/
+    void print()
+    {
+        cout &lt;&lt; m_real &lt;&lt; &quot;+&quot; &lt;&lt; m_vir &lt;&lt; &quot;i&quot; &lt;&lt; endl;
+    }
+};
+//&#x5916;&#x90E8;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x8FD0;&#x7B97;&#x7B26;
+Complex&amp; operator+(Complex const&amp; c1, Complex const&amp; c2)
+{
+    Complex tmp(c1.m_real + c2.m_real, c1.m_vir + c1.m_vir);
+    return tmp;
+}
+
+int main()
+{
+
+    Complex c1(1, 2);
+    c1.print();//1+2i
+
+    Complex c2(2, 2);
+    c2.print();//2+2i
+
+    Complex c3 = c1 + c2;
+    c3.print();//3+4i
+    return 0;
+}
+#endif
+</code></pre><blockquote>
+<p>&#x5355;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>&#x53CC;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>&#x4E09;&#x76EE;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x91CD;&#x8F7D;</p>
+<p>::&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26; .&#x6210;&#x5458;&#x8BBF;&#x95EE;&#x8FD0;&#x7B97;&#x7B26; .*&#x6210;&#x5458;&#x6307;&#x9488;&#x8FD0;&#x7B97;&#x7B26; sizeof&#x957F;&#x5EA6;&#x8FD0;&#x7B97;&#x7B26;&#x4E0D;&#x80FD;&#x91CD;&#x8F7D;</p>
+<p> &lt;&lt;&#x5DE6;&#x63D2;&#xFF0C;&gt;&gt;&#x53F3;&#x63D2;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x65B9;&#x5F0F;&#x91CD;&#x8F7D;</p>
+<p>= () [] -&gt; -&gt;* &#x53EA;&#x80FD;&#x662F;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x91CD;&#x8F7D;">&#x62F7;&#x8D1D;&#x8D4B;&#x503C;&#x91CD;&#x8F7D;</h1>
+<blockquote>
+<p>&#x907F;&#x514D;&#x81EA;&#x8D4B;&#x503C;</p>
+<p>&#x5206;&#x914D;&#x65B0;&#x8D44;&#x6E90;</p>
+<p>&#x62F7;&#x8D1D;&#x65B0;&#x5185;&#x5BB9;</p>
+<p>&#x91CA;&#x653E;&#x4E45;&#x8D44;&#x6E90;</p>
+<p>&#x8FD4;&#x56DE;&#x81EA;&#x5F15;&#x7528;</p>
+</blockquote>
+<h1 id="&#x9759;&#x6001;&#x6210;&#x5458;">&#x9759;&#x6001;&#x6210;&#x5458;</h1>
+<blockquote>
+<p>static&#x6210;&#x5458; &#xFF1A; </p>
+<p>1.&#x4E3A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x5171;&#x6709;&#xFF0C;&#x5C5E;&#x4E8E;&#x7C7B;&#x3002;&#x751F;&#x547D;&#x5468;&#x671F;&#x662F;&#x8FDB;&#x7A0B;&#x7EA7;&#x7684;</p>
+<p>2.&#x5185;&#x5B58;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x5206;&#x914D;&#x3002;</p>
+<p>3.&#x4F7F;&#x7528;&#x524D;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x6B21;</p>
+<p>4.&#x521D;&#x59CB;&#x5316;&#x4E0D;&#x80FD;&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4F5C;&#x7528;&#x57DF;&#x9650;&#x5B9A;&#x7B26;&#x521D;&#x59CB;&#x5316; </p>
+<p>5.&#x521D;&#x59CB;&#x5316;&#xFF1A;  &#x503C;&#x7C7B;&#x578B; &#x7C7B;::&#x7C7B;&#x9759;&#x6001;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x540D; = &#x503C;;</p>
+</blockquote>
+<h1 id="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;">&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</h1>
+<blockquote>
+<p>&#x997F;&#x6C49;&#x5F0F;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x997F;&#x6C49;&#x5F0F;
+
+class Single
+{
+
+public:
+
+    static Single&amp; getInstabce()
+    {
+
+        return instance;
+    }
+private:
+    //&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x5C31;&#x521B;&#x5EFA;&#x4E86;
+    static Single instance;
+    int m_data;
+    Single(int data) :m_data(data)
+    {
+    }
+
+};
+Single Single::instance(1);//&#x521D;&#x59CB;&#x5316;
+int main()
+{
+    Single&amp; ldc = Single::getInstabce();
+    Single&amp; lsx = Single::getInstabce();
+    //&#x5F97;&#x5230;&#x7684;&#x5730;&#x5740;&#x4E00;&#x6837;
+    cout &lt;&lt; &quot;&amp;ldc:&quot; &lt;&lt; &amp;ldc &lt;&lt; endl;
+    cout &lt;&lt; &quot;&amp;lsx:&quot; &lt;&lt; &amp;lsx &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x61D2;&#x6C49;&#x5F0F;&#xFF1A;</p>
+</blockquote>
+<pre><code>#if 1
+using namespace std;
+
+
+//&#x61D2;&#x6C49;&#x5F0F;
+
+class Single
+{
+
+public:
+
+    static Single&amp; getInstabce()
+    {
+        if (!instance)
+        {
+            //...TO DO
+            //&#x5728;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x518D;&#x5F00;&#x8F9F;&#x5185;&#x5B58;
+            instance = new Single();
+        }
+        return *instance;
+    }
+private:
+    //&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x53EA;&#x6709;&#x4E00;&#x4E2A;4&#x5B57;&#x8282;&#x7684;&#x6307;&#x9488;
+    static Single* instance;
+    Single()
+    {
+    }
+
+};
+Single* Single::instance = NULL;//&#x5148;&#x6307;&#x5411;&#x7A7A; 
+int main()
+{
+    Single&amp; ldc = Single::getInstabce();
+    Single&amp; lsx = Single::getInstabce();
+    //&#x5F97;&#x5230;&#x7684;&#x5730;&#x5740;&#x4E00;&#x6837;
+    cout &lt;&lt; &quot;&amp;ldc:&quot; &lt;&lt; &amp;ldc &lt;&lt; endl;
+    cout &lt;&lt; &quot;&amp;lsx:&quot; &lt;&lt; &amp;lsx &lt;&lt; endl;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x6210;&#x5458;&#x6307;&#x9488;">&#x6210;&#x5458;&#x6307;&#x9488;</h1>
+<blockquote>
+<p>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x76F8;&#x5BF9;&#x5730;&#x5740;&#xFF0C;&#x6307;&#x5411;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x6307;&#x9488;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+class Ldc
+{
+public:
+    Ldc(int age) :m_age(age){};
+
+public:
+    int m_age;
+};
+
+int main()
+{
+    Ldc l1 = Ldc(24);
+    int Ldc::*Pvalue = &amp;Ldc::m_age;
+    (l1.*Pvalue)++;
+    cout &lt;&lt; l1.m_age &lt;&lt; endl;//25
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x53BB;&#x5E38;-constcast">&#x53BB;&#x5E38; const_cast</h1>
+<blockquote>
+<p>&#x5F3A;&#x8F6C;&#x4E0D;&#x6539;&#x53D8;&#x539F;&#x6765;&#x7684;&#x53D8;&#x91CF;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+int main()
+{
+    const int rmb = 100;
+    int *temp = const_cast&lt;int*&gt;(&amp;rmb);
+    *temp = 200;
+
+    cout &lt;&lt; &quot;*temp:&quot; &lt;&lt; *temp &lt;&lt; endl;//200
+    cout &lt;&lt; &quot;rmb:&quot; &lt;&lt; rmb &lt;&lt; endl;//100
+
+    cout &lt;&lt; &quot;temp:&quot; &lt;&lt; temp &lt;&lt; &quot;   &quot; &lt;&lt; &quot;&amp;rmb:&quot; &lt;&lt; &amp;rmb &lt;&lt; endl;//&#x5730;&#x5740;&#x76F8;&#x540C;
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x5BC4;&#x5B58;&#x5668;&#x8BFB;&#x5185;&#x5B58;&#xFF0C;&#x518D;&#x4E22;&#x7ED9;&#x53D8;&#x91CF;&#x503C;&#xFF1B;&#x5BC4;&#x5B58;&#x5668;&#x770B;&#x5230; rmb &#x88AB;const&#x4FEE;&#x9970;&#x3002;&#x8BA4;&#x4E3A;&#x5185;&#x5B58;&#x662F;&#x4E0D;&#x53D8;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x628A;100&#x7ED9;&#x51FA;&#xFF1B;</p>
+<p>&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; volatile &#x4FEE;&#x9970;&#x53D8;&#x91CF;&#x4E3A;&#x5F02;&#x53D8;&#x7684;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+int main()
+{
+    volatile const int rmb = 100;
+    int *temp = const_cast&lt;int*&gt;(&amp;rmb);
+    *temp = 200;
+
+    cout &lt;&lt; &quot;*temp:&quot; &lt;&lt; *temp &lt;&lt; endl;//200
+    cout &lt;&lt; &quot;rmb:&quot; &lt;&lt; rmb &lt;&lt; endl;//200
+
+    cout &lt;&lt; &quot;temp:&quot; &lt;&lt; temp &lt;&lt; &quot;   &quot; &lt;&lt; &quot;&amp;rmb:&quot; &lt;&lt; (void*)&amp;rmb &lt;&lt; endl;//&#x5730;&#x5740;&#x76F8;&#x540C;
+    return 0;
+}
+
+#endif
+</code></pre><h1 id="&#x7EE7;&#x627F;">&#x7EE7;&#x627F;</h1>
+<blockquote>
+<p>class &#x7C7B;&#x540D; :public &#x57FA;&#x7C7B;1,protected &#x57FA;&#x7C7B;2,private &#x57FA;&#x7C7B;3,......
+{}</p>
+<p>&#x5171;&#x6027;&#x548C;&#x4E2A;&#x6027;</p>
+<p>&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#x4E86;&#x7236;&#x7C7B;&#x7684;&#x5171;&#x6027;&#x6D3E;&#x751F;&#x4E86;&#x4E2A;&#x6027;</p>
+</blockquote>
+<pre><code>#if 1
+
+using namespace std;
+
+
+class Human
+{
+public:
+    Human(const string&amp; name) :m_name(name){};
+
+private:
+    string m_name;
+public:
+    void print_name()
+    {
+        cout &lt;&lt; this-&gt;m_name &lt;&lt; endl;
+    }
+};
+
+class Ldc :public Human
+{
+public:
+    Ldc(const string&amp; name, int age) :Human(name), m_age(age){};
+
+private:
+    int m_age;
+};
+
+int main()
+{
+    Ldc _ldc = Ldc(&quot;ldc&quot;, 18);
+    _ldc.print_name();
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>public &#x516C;&#x6709;&#x7EE7;&#x627F; &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; &#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5C5E;&#x6027;&#x4E0D;&#x53D8;</p>
+<p>protected &#x4FDD;&#x62A4;&#x7EE7;&#x627F;  &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; public&#x8F6C;&#x4E3A;protected&#x3002; protected&#x548C;private&#x4E0D;&#x53D8;</p>
+<p>private &#x79C1;&#x6709;&#x7EE7;&#x627F;  &#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x6210;&#x5458; private&#x4E0D;&#x53D8;&#x3002;public&#x548C;protected&#x8F6C;&#x4E3A;private</p>
+</blockquote>
+<h1 id="&#x7686;&#x7136;&#x6027;is-a">&#x7686;&#x7136;&#x6027;/is a</h1>
+<blockquote>
+<p>&#x5728;&#x516C;&#x6709;&#x7EE7;&#x627F;&#x4E0B;&#xFF0C;&#x5B50;&#x7C7B;&#x5BF9;&#x8C61;&#x6216;&#x5F15;&#x7528;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x57FA;&#x7C7B;</p>
+<p>&#x5728;&#x6784;&#x9020;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5148;&#x6784;&#x9020;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;</p>
+<p>&#x53EF;&#x4EE5;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x6216;&#x5F15;&#x7528;&#x53BB;&#x63A5;&#x5B50;&#x7C7B;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5F53;&#x6210;&#x7236;&#x7C7B;&#x6765;&#x7528;&#xFF0C;&#x4F46;&#x4EC5;&#x9650;&#x4E8E;&#x5B50;&#x7C7B;&#x7684;&#x8BE5;&#x7236;&#x7C7B;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x5BF9;&#x8C61;&#xFF0C;&#x5B50;&#x7C7B;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;&#x548C;&#x5B50;&#x7C7B;&#x4E2D;&#x7684;&#x4E2A;&#x6027;&#x6210;&#x5458;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#x7F29;&#x5C0F;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x6765;&#x662F;&#x5B89;&#x5168;&#x7684;</p>
+<p>&#x8BBF;&#x95EE;&#x8303;&#x56F4;&#x6269;&#x5927;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x770B;&#x6765;&#x662F;&#x5371;&#x9669;&#x7684;</p>
+</blockquote>
+<h1 id="&#x591A;&#x6001;">&#x591A;&#x6001;</h1>
+<blockquote>
+<p>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5728;&#x4E0D;&#x540C;&#x573A;&#x666F;&#x4E0B;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;</p>
+<p>&#x865A;&#x51FD;&#x6570;&#xFF1A; &#x4F7F;&#x7528; <code>virtual</code>  &#x5173;&#x952E;&#x5B57;&#x58F0;&#x660E;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;</p>
+<p>&#x8986;&#x76D6;&#xFF1A;</p>
+<p>&#x5B50;&#x7C7B;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x57FA;&#x7C7B;&#x7684;&#x865A;&#x51FD;&#x6570;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x51FD;&#x6570;&#x539F;&#x578B;&#xFF0C;&#x8BE5;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x865A;&#x51FD;&#x6570;&#x3002;&#x5BF9;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;&#x6784;&#x6210;&#x8986;&#x76D6;&#x3002;</p>
+<p>&#x8986;&#x76D6;&#x6761;&#x4EF6;&#xFF1A;</p>
+<p>1.&#x51FD;&#x6570;&#x4E3A;&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF08;&#x975E;&#x9759;&#x6001;&#xFF09;</p>
+<p>2.&#x57FA;&#x7C7B;&#x4F7F;&#x7528; <code>virtual</code></p>
+<p>3.&#x51FD;&#x6570;&#x539F;&#x578B;&#x4E25;&#x683C;&#x76F8;&#x540C;</p>
+<p>&#x57FA;&#x7C7B;&#x6307;&#x9488;&#x8C03;&#x7528;&#x4F1A;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x6307;&#x5411;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x5206;&#x522B;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x73B0;&#x8C61;&#x79F0;&#x4E3A;&#x591A;&#x6001;</p>
+</blockquote>
+<h1 id="&#x865A;&#x6790;&#x6784;">&#x865A;&#x6790;&#x6784;</h1>
+<blockquote>
+<p>&#x907F;&#x514D;&#x7686;&#x7136;&#x6027;&#x5BFC;&#x81F4;&#x7684;&#x5B50;&#x7C7B;&#x5176;&#x4ED6;&#x57FA;&#x7C7B;&#x5B50;&#x5BF9;&#x8C61;&#x548C;&#x4E2A;&#x6027;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</p>
+</blockquote>
+<h1 id="&#x7EAF;&#x865A;&#x51FD;&#x6570;">&#x7EAF;&#x865A;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x5F62;&#x5982; virtual &#x8FD4;&#x56DE;&#x503C; &#x51FD;&#x6570;&#x540D;&#xFF08;&#x5F62;&#x53C2;&#x8868;&#xFF09; =0;&#x7684;&#x865A;&#x51FD;&#x6570;&#xFF0C;&#x53EB;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x3002;</p>
+</blockquote>
+<h1 id="&#x62BD;&#x8C61;&#x7C7B;">&#x62BD;&#x8C61;&#x7C7B;</h1>
+<blockquote>
+<p>&#x6709;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x79F0;&#x4E3A;&#x62BD;&#x8C61;&#x7C7B;&#x3002;</p>
+</blockquote>
+<h1 id="&#x7EAF;&#x62BD;&#x8C61;&#x7C7B;&#xFF08;&#x63A5;&#x53E3;&#x7C7B;&#xFF09;">&#x7EAF;&#x62BD;&#x8C61;&#x7C7B;&#xFF08;&#x63A5;&#x53E3;&#x7C7B;&#xFF09;</h1>
+<blockquote>
+<p>&#x6240;&#x6709;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x7EAF;&#x865A;&#x51FD;&#x6570;</p>
+<p>&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x8986;&#x76D6;&#x57FA;&#x7C7B;&#x865A;&#x51FD;&#x6570;</p>
+</blockquote>
+<h1 id="&#x865A;&#x51FD;&#x6570;&#x8868;">&#x865A;&#x51FD;&#x6570;&#x8868;</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../C++11/" class="navigation navigation-prev " aria-label="Previous page: C++11">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../泛型/" class="navigation navigation-next " aria-label="Next page: 泛型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"面向对象","level":"1.3.12","depth":2,"next":{"title":"泛型","level":"1.3.13","depth":2,"path":"C++/泛型/index.md","ref":"./C++/泛型/index.md","articles":[]},"previous":{"title":"C++11","level":"1.3.11","depth":2,"path":"C++/C++11/index.md","ref":"./C++/C++11/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/面向对象/index.md","mtime":"2019-01-08T13:08:16.246Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-08T13:30:12.241Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

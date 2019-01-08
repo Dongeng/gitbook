@@ -1,0 +1,747 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>泛型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../English/" />
+    
+    
+    <link rel="prev" href="../面向对象/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../C/">
+            
+                <a href="../../C/">
+            
+                    
+                    C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../命名空间/">
+            
+                <a href="../命名空间/">
+            
+                    
+                    命名空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../结构体/">
+            
+                <a href="../结构体/">
+            
+                    
+                    结构体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../bool和内联函数/">
+            
+                <a href="../bool和内联函数/">
+            
+                    
+                    bool和内联函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../重载/">
+            
+                <a href="../重载/">
+            
+                    
+                    重载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../缺省/">
+            
+                <a href="../缺省/">
+            
+                    
+                    缺省
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../哑元/">
+            
+                <a href="../哑元/">
+            
+                    
+                    哑元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../引用/">
+            
+                <a href="../引用/">
+            
+                    
+                    引用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../动态内存分配/">
+            
+                <a href="../动态内存分配/">
+            
+                    
+                    动态内存分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../io流/">
+            
+                <a href="../io流/">
+            
+                    
+                    io流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../异常/">
+            
+                <a href="../异常/">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../C++11/">
+            
+                <a href="../C++11/">
+            
+                    
+                    C++11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../面向对象/">
+            
+                <a href="../面向对象/">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.13" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../English/">
+            
+                <a href="../../English/">
+            
+                    
+                    English
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../数据结构/">
+            
+                <a href="../../数据结构/">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../数据结构/STL/">
+            
+                <a href="../../数据结构/STL/">
+            
+                    
+                    STL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../数据结构/哈希表/">
+            
+                <a href="../../数据结构/哈希表/">
+            
+                    
+                    哈希表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../算法/">
+            
+                <a href="../../算法/">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >泛型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h1>
+<h1 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h1>
+<blockquote>
+<p>&#x6CDB;&#x578B;&#x5141;&#x8BB8;&#x5F3A;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x5B9A;&#x4E49;&#x4E00;&#x90E8;&#x5206;&#x53EF;&#x53D8;&#x90E8;&#x5206;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x5FC5;&#x987B;&#x58F0;&#x660E;</p>
+<p>&#x901A;&#x8FC7;&#x4E8C;&#x6B21;&#x7F16;&#x8BD1;&#x5B9E;&#x73B0;</p>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F; &#xFF1A; &#x7C7B;&#x578B;&#x53C2;&#x6570;&#x5316;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max(T a, T b)
+{
+    return a &gt; b ? a : b;
+}
+
+
+int main()
+{
+
+    cout &lt;&lt; max&lt;int&gt;(11, 22) &lt;&lt; endl;//22
+    cout &lt;&lt; max&lt;double&gt;(11.11, 22.22) &lt;&lt; endl;//22.22
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7684;&#x9690;&#x5F0F;&#x63A8;&#x65AD;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max(T a, T b)
+{
+    cout &lt;&lt; typeid(T).name() &lt;&lt; endl;
+    return a &gt; b ? a : b;
+}
+
+
+int main()
+{
+
+    cout &lt;&lt; max(11, 22) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A;int
+    cout &lt;&lt; max(11.11, 22.22) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A;double
+    cout &lt;&lt; max(&quot;hello&quot;, &quot;would&quot;) &lt;&lt; endl;//&#x8FD9;&#x91CC;&#x5C16;&#x62EC;&#x53F7;&#x4E0D;&#x4F20;&#x7C7B;&#x578B;&#x540D;  &#x7F16;&#x8BD1;&#x5668;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x503C;&#x63A8;&#x65AD;&#x4E3A; char const*  &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x662F;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5730;&#x5740;&#x7684;&#x5927;&#x5C0F;&#xFF0C; &#x5E76;&#x4E0D;&#x662F;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5927;&#x5C0F;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x91CD;&#x8F7D;</p>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x4F18;&#x5148;&#x9009;&#x62E9;&#x666E;&#x901A;&#x7684;&#x5177;&#x4F53;&#x7684;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+template&lt;typename T&gt;
+T max( T a,  T b)
+{
+    cout &lt;&lt; &quot;T &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return a &gt; b ? a : b;
+}
+
+template&lt;typename T&gt;
+T* max(T* const a, T* const b)
+{
+    cout &lt;&lt; &quot;T* &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return *a &gt; *b ? a : b;
+}
+
+
+const char* const&amp; max(const char* const&amp; a, const char* const&amp; b)
+{
+    cout &lt;&lt; &quot;const char* &#x7248;&#x672C; &#x666E;&#x901A;&#x51FD;&#x6570;&quot; &lt;&lt; endl;
+    return strcmp(a, b) &gt; 0 ? a : b;
+}
+
+
+int main()
+{
+
+    const char* a = &quot;abc&quot;;
+    const char* b = &quot;abd&quot;;
+
+    cout &lt;&lt; max(a, b) &lt;&lt; endl;//&#x666E;&#x901A;&#x51FD;&#x6570;
+    cout &lt;&lt; max&lt;const char*&gt;(a, b) &lt;&lt; endl;// T &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;
+    cout &lt;&lt; max&lt;const char&gt;(a, b) &lt;&lt; endl;//T* &#x7248;&#x672C; &#x91CD;&#x8F7D;&#x7684;&#x6A21;&#x677F;&#x51FD;&#x6570;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x7C7B;&#x6A21;&#x677F;</p>
+</blockquote>
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+template&lt;typename T&gt;
+class Ldc
+{
+public:
+    Ldc(T data)
+    {
+        m_data = data;
+    };
+private:
+    T m_data;
+public:
+    void print()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+    Ldc&lt;int&gt; ldc(20);
+    ldc.print();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x6240;&#x6709;&#x975E;&#x9759;&#x6001;&#x6210;&#x5458;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x6A21;&#x677F;</p>
+<p>&#x7C7B;&#x5916;&#x5B9A;&#x4E49;&#x6210;&#x5458;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5E26;&#x4E0A; <code>template &lt;typename T&gt;</code></p>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570; &#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x4E0D;&#x53EF;&#x4EE5;&#x5206;&#x5F00;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;</p>
+<p>&#x53CB;&#x5143;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x548C;&#x5B9A;&#x4E49;&#x5206;&#x5F00; &#x9700;&#x8981;&#x589E;&#x52A0;&#x6CDB;&#x578B;&#x652F;&#x6301;</p>
+</blockquote>
+<pre><code>template&lt;typename T&gt;
+class Ldc;
+
+template&lt;typename T&gt;
+void lookData(Ldc&lt;T&gt; const&amp; that)
+{
+    cout &lt;&lt; that.m_data &lt;&lt; endl;
+}
+
+template&lt;typename T&gt;
+class Ldc
+{
+public:
+    friend void lookData &lt;T&gt;(Ldc&lt;T&gt; const&amp; that);
+    Ldc(T data)
+    {
+        m_data = data;
+    };
+private:
+    T m_data;
+
+};
+
+
+
+int main()
+{
+    Ldc&lt;int&gt; iLdc(20);
+    lookData(iLdc);//20
+
+    Ldc&lt;char&gt; cLdc(&apos;a&apos;);
+    lookData(cLdc);//&apos;a&apos;
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7C7B;&#x7684;&#x7EE7;&#x627F;</p>
+<p>1.&#x7236;&#x7C7B;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5B50;&#x7C7B;&#x5FC5;&#x987B;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5217;&#x8868;&#x6765;&#x521D;&#x59CB;&#x5316;</p>
+<p>2.&#x7EE7;&#x627F;&#x65F6;&#xFF0C;&#x7236;&#x7C7B;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x5B50;&#x7C7B;&#x4E0D;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x77E5;&#x9053;&#x7236;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+</blockquote>
+<pre><code>template &lt;typename T&gt;
+class Parent
+{
+public:
+    Parent(T data)
+    {
+        m_data = data;
+    }
+
+private:
+    T m_data;
+
+public:
+    void lookData()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+class Son :public Parent&lt;int&gt;/*&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x7C7B;&#x578B;*/
+{
+public:
+    Son(int data) :Parent(data){};/*&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7236;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x521D;&#x59CB;&#x5316;*/
+private:
+
+};
+
+
+
+int main()
+{
+    Son son(20);
+    son.lookData();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>3.&#x5982;&#x679C;&#x5B50;&#x7C7B;&#x662F;&#x6A21;&#x677F;&#x7C7B;&#xFF0C;&#x8981;&#x4E48;&#x6307;&#x5B9A;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8981;&#x4E48;&#x7528;&#x5B50;&#x7C7B;&#x7684;&#x6CDB;&#x578B;&#x6765;&#x6307;&#x5B9A;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x578B;</p>
+</blockquote>
+<pre><code>template &lt;typename T&gt;
+class Parent
+{
+public:
+    Parent(T data)
+    {
+        m_data = data;
+    }
+
+private:
+    T m_data;
+
+public:
+    void lookData()
+    {
+        cout &lt;&lt; m_data &lt;&lt; endl;
+    }
+};
+
+
+template &lt;typename T&gt;
+class Son :public Parent&lt;T&gt;/*&#x7528;&#x5B50;&#x7C7B;&#x7684;&#x6CDB;&#x578B;&#x6765;&#x6307;&#x5B9A;&#x7C7B;&#x578B;*/
+{
+public:
+    Son(int data) :Parent&lt;T&gt;(data){};
+private:
+
+};
+
+
+
+int main()
+{
+    Son&lt;int&gt; son(20);
+    son.lookData();//20
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x6A21;&#x677F;&#x7279;&#x5316;</p>
+<p>&#x5BF9;&#x666E;&#x901A;&#x7248;&#x672C;&#x7684;&#x8865;&#x5145;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../面向对象/" class="navigation navigation-prev " aria-label="Previous page: 面向对象">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../English/" class="navigation navigation-next " aria-label="Next page: English">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"泛型","level":"1.3.13","depth":2,"next":{"title":"English","level":"1.4","depth":1,"path":"English/index.md","ref":"./English/index.md","articles":[]},"previous":{"title":"面向对象","level":"1.3.12","depth":2,"path":"C++/面向对象/index.md","ref":"./C++/面向对象/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/泛型/index.md","mtime":"2019-01-08T13:10:04.959Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-08T13:30:12.241Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
