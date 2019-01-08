@@ -236,7 +236,663 @@
 &#x7528;&#x6765;&#x6307;&#x51FA;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;</p>
 </blockquote>
 <h1 id="vector-&#x5411;&#x91CF;">vector &#x5411;&#x91CF;</h1>
-<h1 id="&#x6811;">&#x6811;</h1>
+<blockquote>
+<p>&#x5934;&#x6587;&#x4EF6;&#xFF1A; <code>#include &lt;vector&gt;</code></p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+</blockquote>
+<pre><code>int main()
+{
+
+    vector&lt;int&gt; vec1;//&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;int&#x578B;&#x7684;&#x5411;&#x91CF;
+
+    vector&lt;int&gt; vec2(5);//&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x5927;&#x5C0F;&#x4E3A;5&#x7684;int&#x578B;&#x5411;&#x91CF;
+
+    vector&lt;int&gt; vec3(5,1);//&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x5927;&#x5C0F;&#x4E3A;5&#x503C;&#x4E3A;1&#x7684;int&#x578B;&#x5411;&#x91CF;
+
+    vector&lt;int&gt; vec4 = vec3;//&#x62F7;&#x8D1D;&#x6784;&#x9020;
+    vector&lt;int&gt; vec5(vec3);//&#x62F7;&#x8D1D;&#x6784;&#x9020;
+
+    int arr[5] = { 1, 2, 3, 4, 5 };
+
+    vector&lt;int&gt; vec6(arr, arr + 5);
+    vector&lt;int&gt; vec7(&amp;arr[0], &amp;arr[5]);
+
+    vec1.push_back(1);//&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x5143;&#x7D20;
+    vec1.push_back(2);//&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x5143;&#x7D20;
+    vec1.push_back(3);//&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x5143;&#x7D20;
+
+    vec1.pop_back();//&#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
+
+    cout &lt;&lt; *vec1.begin() &lt;&lt; endl;//vec1.begin()  &#x8FD4;&#x56DE;&#x5F00;&#x59CB;&#x8FED;&#x4EE3;&#x5668;  
+    cout &lt;&lt; *(vec1.end()-1) &lt;&lt; endl;//vec1.end()  &#x6307;&#x5411;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;
+
+    cout &lt;&lt; vec1[0] &lt;&lt; endl;//&#x4E0B;&#x6807;&#x8BBF;&#x95EE;  &#x4E0D;&#x68C0;&#x67E5;&#x8D8A;&#x754C;
+    cout &lt;&lt; vec1.at(0)&lt;&lt; endl;// &#x68C0;&#x67E5;&#x8D8A;&#x754C;
+
+    cout &lt;&lt; vec1.front() &lt;&lt; endl;// &#x8BBF;&#x95EE;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20; &#x4E0D;&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;
+    cout &lt;&lt; vec1.back() &lt;&lt; endl;// &#x8BBF;&#x95EE;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20; &#x4E0D;&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x5B58;&#x5728;
+
+
+    int *p = vec1.data(); //&#x8FD4;&#x56DE;&#x6307;&#x5411;&#x6570;&#x7EC4;&#x7684;&#x6307;&#x9488;  c++11
+
+    vec1.clear();//&#x6E05;&#x7A7A;&#x6570;&#x636E;  &#x6E05;&#x7A7A;&#x6808;&#x533A;&#x5BF9;&#x8C61;
+
+    for (size_t i = 0; i &lt; 10; i++)
+    {
+        vec1.push_back(i);
+    }
+
+    //&#x904D;&#x5386;&#x5411;&#x91CF;&#x7684;&#x6570;&#x636E;
+    for (vector&lt;int&gt;::iterator it = vec1.begin(); it != vec1.end(); ++it)
+    {
+        cout &lt;&lt; *it &lt;&lt; endl;
+    }
+
+    cout &lt;&lt; &quot;&#x5B9E;&#x9645;&#x5143;&#x7D20;&#x4E2A;&#x6570;&quot; &lt;&lt; endl;
+    cout &lt;&lt; vec1.size() &lt;&lt; endl;//&#x5B9E;&#x9645;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+
+    cout &lt;&lt; &quot;&#x5143;&#x7D20;&#x7FFB;&#x8F6C;&quot; &lt;&lt; endl;
+    //&#x5143;&#x7D20;&#x7FFB;&#x8F6C;
+    reverse(vec1.begin(), vec1.end());
+    for (vector&lt;int&gt;::iterator it = vec1.begin(); it != vec1.end(); ++it)
+    {
+        cout &lt;&lt; *it &lt;&lt; endl;
+    }
+    //&#x6392;&#x5E8F;
+    sort(vec1.begin(), vec1.end());//&#x9700;&#x8981;&#x5934;&#x6587;&#x4EF6; #include &lt;algorithm&gt; &#x7B97;&#x6CD5;&#x5E93;
+
+    cout &lt;&lt; &quot;&#x6392;&#x5E8F;&quot; &lt;&lt; endl;
+    for (vector&lt;int&gt;::iterator it = vec1.begin(); it != vec1.end(); ++it)
+    {
+        cout &lt;&lt; *it &lt;&lt; endl;
+    }
+
+    vec2 = { 1, 2, 3, 4, 5 };//c++11
+
+    //&#x4EA4;&#x6362;&#x6570;&#x636E;
+    vec1.swap(vec2);
+
+    //&#x5224;&#x7A7A;
+    vec1.empty();//&#x7A7A;&#x771F;&#xFF0C;&#x975E;&#x7A7A;&#x5047;
+
+    //&#x6269;&#x5BB9;
+    vec3.reserve(10);
+    vec3.reserve(2);//&#x4E0D;&#x80FD;&#x6539;&#x5C0F;
+
+    vec3.assign(3, 5);//&#x6539;&#x53D8;&#x5B58;&#x653E;&#x4E2A;&#x6570;&#x548C;&#x503C;
+
+    vec3.resize(12, 6);//&#x6269;&#x5B9E;&#x9645;&#x4E2A;&#x6570;&#xFF0C;&#x539F;&#x6765;&#x7684;&#x503C;&#x4E0D;&#x53D8;&#xFF0C;&#x591A;&#x7684;&#x8D4B;&#x503C;&#x4E3A;6
+
+    return 0;
+}
+</code></pre><blockquote>
+<p>&#x7B80;&#x5355;&#x6E90;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</p>
+</blockquote>
+<pre><code>template &lt;typename T&gt;
+class CMyVector
+{
+public:
+    typedef T* iterator;
+    typedef const T* const_iterator;
+    //&#x6784;&#x9020;
+public:
+    //&#x5355;&#x53C2;&#xFF0C;&#x65E0;&#x53C2;&#x6784;&#x9020;
+    explicit CMyVector(int capacity = 0)
+    {
+        if (capacity &gt; 0)
+        {
+            pBuff = new T[capacity];
+            memset(pBuff, 0, sizeof(T)*capacity);
+        }
+        else
+        {
+            pBuff = nullptr;
+        }
+
+        m_capacity = capacity;
+        m_size = capacity;
+
+
+
+    };
+    //&#x53CC;&#x53C2;&#x6784;&#x9020;
+    CMyVector(int capacity, T const&amp; data)
+    {
+
+
+        if (capacity &gt; 0)
+        {
+            pBuff = new T[capacity];
+        }
+        else
+        {
+            pBuff = nullptr;
+        }
+
+        m_capacity = capacity;
+        m_size = capacity;
+
+        for (int i = 0; i &lt; m_size; ++i)
+        {
+            pBuff[i] = data;
+        }
+
+    }
+    //&#x62F7;&#x8D1D;&#x6784;&#x9020;
+    CMyVector(CMyVector&lt;T&gt; const&amp; that)
+    {
+        this-&gt;m_capacity = that.m_capacity;
+        this-&gt;m_size = that.m_size;
+        if (this-&gt;m_capacity != 0)
+        {
+            this-&gt;pBuff = new T[this-&gt;m_capacity];
+            //&#x62F7;&#x8D1D;&#x5185;&#x5B58;
+            memcpy(this-&gt;pBuff,that.pBuff, sizeof(T)*this-&gt;m_size);
+        }
+        else
+        {
+            this-&gt;pBuff = nullptr;
+        }
+
+    }
+    //&#x62F7;&#x8D1D;&#x8D4B;&#x503C;
+    CMyVector&lt;T&gt;&amp; operator=(CMyVector&lt;T&gt; const&amp; that)
+    {
+        if (&amp;that != this)//&#x907F;&#x514D;&#x81EA;&#x8D4B;&#x503C;
+        {
+            T* p_tmp = new T[that.m_capacity];//&#x7533;&#x8BF7;&#x5185;&#x5B58;
+            memcpy(p_tmp, that.pBuff, sizeof(T)*that.m_size);//&#x62F7;&#x8D1D;&#x8D44;&#x6E90;
+            clear();//&#x91CA;&#x653E;&#x65E7;&#x8D44;&#x6E90; &#x907F;&#x514D;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;
+            this-&gt;pBuff = p_tmp;//&#x63A5;&#x7BA1;&#x8D44;&#x6E90;
+
+            this-&gt;m_capacity = that.m_capacity;
+            this-&gt;m_size = that.m_size;
+        }
+        return *this;//&#x8FD4;&#x56DE;&#x81EA;&#x5F15;&#x7528;
+    }
+    ~CMyVector()
+    {
+        clear();
+    }
+    //&#x6210;&#x5458;&#x53D8;&#x91CF;
+private:
+    T      *pBuff;//&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x9996;&#x5730;&#x5740;
+    int m_capacity;//&#x5BB9;&#x91CF;
+    int m_size;//&#x5B9E;&#x9645;&#x5143;&#x7D20;&#x4E2A;&#x6570;
+    //&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;
+public:
+    bool operator==(CMyVector&lt;T&gt; const&amp; that) const
+    {
+        if (this-&gt;m_size != that.m_size)
+        {
+            return false;
+        }
+        for (int i = 0; i &lt; this-&gt;m_size; ++i)
+        {
+            if (pBuff[i] != that.pBuff[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool operator!=(CMyVector&lt;T&gt; const&amp; that) const
+    {
+        return !(*this==that)
+    }
+    T&amp; operator[](int index) const
+    {
+        //&#x4E0D;&#x68C0;&#x67E5;&#x8D8A;&#x754C;
+        return pBuff[index];
+    }
+    //&#x6210;&#x5458;&#x51FD;&#x6570;
+public:
+    iterator begin()
+    {
+        return pBuff;
+    }
+    iterator end()
+    {
+        return pBuff + m_size;
+    }
+    const_iterator begin() const
+    {
+        return pBuff;
+    }
+    const_iterator end()const
+    {
+        return pBuff + m_size;
+    }
+    T&amp; at(int index) const
+    {
+        //&#x68C0;&#x67E5;&#x8D8A;&#x754C;&#x629B;&#x5F02;&#x5E38;
+        if (index &gt;= 0 &amp;&amp; index &lt; m_size)
+        {
+            return pBuff[index];
+        }
+        throw out_of_range(&quot;out_of_range&quot;);
+    }
+    void assign(int n, T const&amp; data)
+    {
+        clear();
+        m_capacity = n;
+        m_size = n;
+        pBuff = new T[n];
+        for (int i = 0; i &lt; n; ++i)
+        {
+            pBuff[i] = data;
+        }
+    };
+    void swap(CMyVector&lt;T&gt; &amp; that)
+    {
+        CMyVector&lt;T&gt; temp;
+        temp = *this;
+        *this = that;
+        that = temp;
+    };
+    void reserve(int n)
+    {
+        if (n &gt; m_capacity)
+        {
+            T* temp = new T[n];
+            memcpy(temp, pBuff, sizeof(T)*m_size);
+            if (pBuff)
+            {
+                delete[] pBuff;
+            }
+            pBuff = temp;
+            m_capacity = n;
+
+        }
+    };
+    void resize(int n)
+    {
+        if (n &gt; m_size)
+        {
+            reserve(n);
+            memset(&amp;pBuff[m_size], 0, sizeof(T)*(n - m_size));
+        }
+        m_size = n;
+    };
+    void resize(int n, T const&amp; data)
+    {
+        size_t tempSize = m_size;
+        resize(n);
+        for (size_t i = tempSize; i &lt; n; ++i)
+        {
+
+            pBuff[i] = data;
+        }
+    };
+
+    T&amp; front()
+    {
+        return pBuff[0];
+    }
+    T&amp; back()
+    {
+        return pBuff[m_size -1];
+    }
+
+    void push_back(T const&amp; data)
+    {
+        if (m_capacity == m_size)
+        {
+            //&#x6269;&#x5BB9;
+            reserve((m_capacity+1)*2);
+        }
+        pBuff[m_size++] = data;
+    }
+    void pop_back()
+    {
+        if (m_size &gt; 0)
+        {
+            m_size--;
+        }
+    }
+
+    void clear()
+    {
+        if (pBuff)
+        {
+            delete[] pBuff;
+            pBuff = nullptr;
+            m_size = 0;
+            m_capacity = 0;
+        }
+
+    }
+
+    int size()
+    {
+        return m_size;
+    };
+    int capacity()
+    {
+        return m_capacity;
+    };
+    bool empty()
+    {
+        return m_size == 0;
+    };
+};
+</code></pre><h1 id="list">list</h1>
+<blockquote>
+<p>&#x5934;&#x6587;&#x4EF6;&#xFF1A; <code>#include &lt;list&gt;</code></p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+</blockquote>
+<pre><code>/*
+list  &#x73AF;&#x72B6;&#x53CC;&#x5411;&#x94FE;&#x8868;
+
+&#x6BCF;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5206;&#x4E3A; &#xFF1A; &#x6570;&#x636E;&#x57DF;  &#x524D;&#x9A71;&#x6307;&#x9488;  &#x540E;&#x9A71;&#x6307;&#x9488;
+
+&#x968F;&#x673A;&#x63D2;&#x5165; &#xFF1A; O(1)
+
+&#x968F;&#x673A;&#x8BBF;&#x95EE;&#xFF1A;  O(n)
+
+
+
+*/
+
+bool foo(int a)
+{
+    return a % 2 == 0;
+}
+
+#if 0
+
+int main()
+{
+
+
+    list&lt;int&gt; list1;
+    list&lt;int&gt; list2(5);//5&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x94FE;&#x8868;  &#x6570;&#x636E;&#x9ED8;&#x8BA4;&#x4E3A;0
+
+
+    list&lt;int&gt; list3(3,6);//3&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x94FE;&#x8868;  &#x6570;&#x636E;&#x4E3A;6
+
+
+    list&lt;int&gt; list4(list3);
+
+    list&lt;int&gt; list5 = (list3);
+
+    list1.push_back(20);
+    list1.push_back(20);
+    list1.push_back(20);
+    list1.pop_back();
+
+    list1.push_back(5);
+    list1.push_back(6);
+    list1.push_back(50);
+
+    list1.sort();//&#x6392;&#x5E8F;
+
+
+
+    //merge  &#x5408;&#x5E76;&#x5E76;&#x6392;&#x5E8F;
+
+    list1.clear();
+    list2.clear();
+
+    list1.push_back(3);
+    list1.push_back(6);
+
+
+    list2.push_back(4);
+    list2.push_back(7);
+
+    list1.merge(list2);
+
+    //remove()  &#x6E05;&#x9664;&#x6307;&#x5B9A;&#x503C;
+
+    list1.remove(3);
+
+    //remove_if()  &#x6E05;&#x9664;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x503C;  &#x53C2;&#x6570;&#x662F;&#x8FD4;&#x56DE;bool&#x7684;&#x51FD;&#x6570;&#x6307;&#x9488;
+    //list1.remove_if(foo);
+    list1.remove_if([](int x){return x == 7; });
+
+
+    // splice()  &#x5207;&#x5272;
+
+    // unique()  &#x5220;&#x9664;&#x8FDE;&#x7EED;&#x7684;&#x91CD;&#x590D;&#x503C;  &#x4FDD;&#x8BC1;&#x552F;&#x4E00;
+    list1.push_back(4);
+    list1.push_back(4);
+    list1.push_back(4);
+    list1.push_back(4);
+    list1.push_back(4);
+
+    list1.unique();
+
+    for (list&lt;int&gt;::iterator it = list1.begin(); it != list1.end(); ++it)
+    {
+        cout &lt;&lt; *it;
+    }
+    cout &lt;&lt; endl;
+
+    return 0;
+}
+
+#endif
+</code></pre><blockquote>
+<p>&#x7B80;&#x5355;&#x6E90;&#x7801;&#x5B9E;&#x73B0;&#xFF1A;</p>
+</blockquote>
+<pre><code>#pragma once
+#include &lt;memory&gt;
+
+using namespace std;
+
+/*
+
+list  &#x8282;&#x70B9;
+        *prev
+        *next
+        data
+*/
+
+template &lt;typename T&gt;
+struct _list_node
+{
+    _list_node*        prev;
+    _list_node*        next;
+    T                data;
+};
+
+
+/*
+list iterator
+
+
+
+*/
+
+template &lt;typename T&gt;
+class _list_iterator
+{
+public:
+    typedef _list_iterator&lt;T&gt;            self;
+    typedef _list_node&lt;T&gt;*                link_type;
+
+public:
+    link_type                            ptr;  // &#x6307;&#x5411;list&#x8282;&#x70B9;&#x7684;&#x6307;&#x9488;  &#x5934;&#x6307;&#x9488;
+
+public:
+    _list_iterator(link_type p = nullptr)
+    {
+        ptr = p;
+    }
+
+    _list_iterator(self const&amp; that)
+    {
+        ptr = that.ptr;
+    }
+
+    bool operator==(self const&amp; that)
+    {
+        return ptr == that.ptr;
+    }
+
+    bool operator!=(self const&amp; that)
+    {
+        return ptr != that.ptr;
+    }
+
+    T&amp; operator*() const
+    {
+        return ptr-&gt;data;
+    }
+
+    T* operator-&gt;()const
+    {
+        return &amp;(ptr-&gt;data);
+    }
+    //&#x524D;++
+    self&amp; operator++()
+    {
+        ptr = ptr-&gt;next;
+        return *this;
+    }
+    //&#x540E;++
+    self&amp; operator++(int)
+    {
+        self temp(*this);
+        ++*this;
+        return temp;
+    }
+
+    //&#x524D;--
+    self&amp; operator--()
+    {
+        ptr = ptr-&gt;prev;
+        return *this;
+    }
+    //&#x540E;--
+    self&amp; operator--(int)
+    {
+        self temp(*this);
+        --*this;
+        return temp;
+    }
+};
+
+/*
+
+list
+
+
+
+
+*/
+
+
+template &lt;typename T&gt;
+class MyList
+{
+protected:
+     typedef _list_node&lt;T&gt;                    list_node;
+     typedef T                                value_type;
+     typedef T*                                pointer;
+     typedef const T*                        const_pointer;
+     typedef T&amp;                                reference;
+
+     //&#x7A7A;&#x95F4;&#x914D;&#x7F6E;&#x5668;
+
+     ; allocator&lt;list_node&gt;   nodeAllcator;
+
+public:
+    typedef list_node*                        link_type;
+    typedef _list_iterator&lt;T&gt;                iterator;
+
+    /*
+    &#x5206;&#x914D;&#x5185;&#x5B58;
+    */
+protected:
+    link_type alloc_node()
+    {
+        return nodeAllcator.allocate(sizeof(list_node));
+    }
+
+    link_type alloc_dtor_node(const T&amp; value)
+    {
+        link_type p = alloc_node();
+        nodeAllcator.construct(&amp;(p-&gt;data), value);
+        return p;
+    }
+
+    void dealloc_node(link_type p)
+    {
+        nodeAllcator.deallocate(p);
+    }
+
+    void dealloc_all_node(link_type p)
+    {
+        destroy(p-&gt;data);
+        dealloc_node(p);
+    }
+
+    /*
+
+    &#x6784;&#x9020;&#x51FD;&#x6570;
+    */
+public:
+    MyList()
+    {
+        node = alloc_node();
+        node-&gt;prev = node;
+        node-&gt;next = node;
+    };
+
+private:
+    link_type                                node;//&#x6307;&#x5411;list&#x8282;&#x70B9;
+
+
+public:
+    iterator begin()
+    {
+        return node-&gt;next;
+    }
+
+    iterator end()
+    {
+        return node;
+    }
+
+    iterator cbegin()const
+    {
+        return node-&gt;next;
+    }
+
+    iterator cend()const
+    {
+        return node;
+    }
+
+    bool empty()
+    {
+        return node == node-&gt;next;
+    }
+
+    iterator insert(iterator pos,const T&amp; value)
+    {
+        link_type p = alloc_dtor_node(value);
+
+
+        //&#x5148;&#x8FDE;&#x63A5;
+        p-&gt;next = pos.ptr;
+        p-&gt;prev = pos.ptr-&gt;prev;
+
+        pos.ptr-&gt;prev-&gt;next = p;
+        pos.ptr-&gt;prev = p;
+
+        return p;
+    }
+
+    void push_back(const T&amp; value)
+    {
+        insert(end(), value);
+    }
+
+};
+</code></pre><h1 id="&#x6811;">&#x6811;</h1>
 <blockquote>
 <p>&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;  n&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6709;&#x9650;&#x96C6;</p>
 <p> n = 0 &#x65F6;  &#x4E3A;&#x7A7A;&#x6811;</p>
@@ -463,7 +1119,8 @@ void QuickSort(int *arr, int left,int right)
 }
 </code></pre><h2 id="&#x5E0C;&#x5C14;&#x6392;&#x5E8F;">&#x5E0C;&#x5C14;&#x6392;&#x5E8F;</h2>
 <blockquote>
-<p>&#x90E8;&#x5206;&#x6709;&#x5E8F;  &#x518D;&#x6392;&#x5E8F;   </p>
+<p>&#x90E8;&#x5206;&#x6709;&#x5E8F;  &#x518D;&#x6392;&#x5E8F;     </p>
+<p>&#x901A;&#x8FC7;&#x6B65;&#x957F; &#x4F7F;&#x5F97;&#x90E8;&#x5206;&#x5DF2;&#x7ECF;&#x6709;&#x5E8F;   &#x6700;&#x540E;&#x4F7F;&#x7528;&#x63D2;&#x5165;&#x6392;&#x5E8F;</p>
 <p>&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x4F18;&#x5316;&#x7248;</p>
 </blockquote>
 <pre><code>void ShellSort(int *arr, int len)
@@ -487,7 +1144,88 @@ void QuickSort(int *arr, int left,int right)
     }
 
 }
-</code></pre>
+</code></pre><h1 id="&#x5806;">&#x5806;</h1>
+<blockquote>
+<p>&#x4E00;&#x9897;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;</p>
+<p>&#x5927;&#x6839;&#x5806; &#xFF1A; &#x6839;&#x5927;&#x4E8E;&#x5B69;&#x5B50;&#x7ED3;&#x70B9;</p>
+<p>&#x5C0F;&#x6839;&#x5806; &#xFF1A; &#x6839;&#x5C0F;&#x4E8E;&#x5B69;&#x5B50;&#x7ED3;&#x70B9;</p>
+</blockquote>
+<h1 id="&#x54C8;&#x5E0C;&#x8868;">&#x54C8;&#x5E0C;&#x8868;</h1>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x6563;&#x5217;&#x51FD;&#x6570;  &#x7B97;&#x51FA;  &#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x4F4D;&#x7F6E; &#x4F7F;&#x4E4B;&#x8FBE;&#x5230; O(1) &#x7EA7;&#x7684;&#x8BBF;&#x95EE;&#x6548;&#x7387;</p>
+</blockquote>
+<pre><code>|  &#x59D3;&#x540D;| &#x73ED;&#x7EA7; |  &#x6210;&#x7EE9;
+
+|  &#x5F20;&#x4E09;| 1|  70
+
+|  &#x674E;&#x56DB;| 2|  86
+
+&#x54C8;&#x5E0C;&#x8868;&#xFF1A;
+
+|a   |b   |c   |d   |e   |f   |g   |h   |i   |j   |k 
+
+
+|0   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10
+
+-------------------------------------------------------
+|l   |m   |n   |o   |p   |q   |r  |s   |t   |u   |v     
+
+|11  |12  |13  |14  |15  |16  |17 |18  |19  |20  |21
+
+-------------------------------------------------------
+|w   |x   |y   |z
+
+|22  |23  |24  |25
+
+
+//&#x5F20;&#x4E09;  &#x59D3;&#x540D;&#x9996;&#x5B57;&#x6BCD;&#x4E3A; z &#x548C; s  &#x5BF9;&#x6BD4;&#x54C8;&#x5E0C;&#x8868;&#x5F97;&#x51FA; 25 + 18 = 43&#xFF1B; &#x7B97;&#x51FA;&#x8FD9;&#x4E00;&#x6761;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;
+//&#x90A3;&#x4E48;  arr[43]  =  70/*&#x5F20;&#x4E09;&#x6210;&#x7EE9;*/
+
+//&#x674E;&#x56DB;  &#x59D3;&#x540D;&#x9996;&#x5B57;&#x6BCD;&#x4E3A; l &#x548C; s  &#x5BF9;&#x6BD4;&#x54C8;&#x5E0C;&#x8868;&#x5F97;&#x51FA; 11 + 18 = 29&#xFF1B;&#x7B97;&#x51FA;&#x8FD9;&#x4E00;&#x6761;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;
+//&#x90A3;&#x4E48;  arr[29]  =  86/*&#x674E;&#x56DB;&#x6210;&#x7EE9;*/
+</code></pre><h1 id="&#x54C8;&#x5E0C;&#x51B2;&#x7A81;">&#x54C8;&#x5E0C;&#x51B2;&#x7A81;</h1>
+<blockquote>
+<p>&#x4E24;&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x952E;&#x503C;&#x6620;&#x5C04;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;</p>
+<p>&#x901A;&#x8FC7;&#x6563;&#x5217;&#x51FD;&#x6570; &#x7B97;&#x51FA;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;  &#x5F97;&#x5230;&#x9AD8;&#x6548;&#x7387;&#x7684;&#x8BBF;&#x95EE;&#x6548;&#x7387;&#xFF0C;&#x4F46;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684;&#x4EA7;&#x751F;&#x4E86;&#x54C8;&#x5E0C;&#x51B2;&#x7A81; </p>
+<p>&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x6307;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x4E2A;&#x4F53;&#xFF08;&#x6570;&#x636E;&#xFF09; &#x901A;&#x8FC7; &#x6563;&#x5217;&#x51FD;&#x6570; &#x5F97;&#x5230;&#x76F8;&#x540C;&#x7684;&#x7ED3;&#x679C;&#xFF08;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#xFF09;&#xFF0C;&#x6BD4;&#x5982; &#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;</p>
+</blockquote>
+<pre><code>|  &#x59D3;&#x540D; |  &#x73ED;&#x7EA7;   |  &#x6210;&#x7EE9;
+
+|  &#x674E;&#x65AF; |  3     |  75
+
+//&#x674E;&#x65AF;  &#x59D3;&#x540D;&#x9996;&#x5B57;&#x6BCD;&#x4E3A; l &#x548C; s  &#x5BF9;&#x6BD4;&#x54C8;&#x5E0C;&#x8868;&#x5F97;&#x51FA; 11 + 18 = 29&#xFF1B;&#x7B97;&#x51FA;&#x8FD9;&#x4E00;&#x6761;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;
+//&#x90A3;&#x4E48;  arr[29]  =  75/*&#x674E;&#x65AF;&#x6210;&#x7EE9;*/
+</code></pre><blockquote>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x548C;&#x4E0A;&#x9762;&#x674E;&#x56DB;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x81F4;&#x7684;  &#x674E;&#x65AF;&#x548C;&#x674E;&#x56DB;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x90FD;&#x662F;29  &#x3002; &#x4F46;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0D;&#x4F1A;&#x5B58;&#x4E24;&#x4EFD;&#x6570;&#x636E;  &#x3002; &#x8FD9;&#x5C31;&#x662F;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;</p>
+<p>&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x662F;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x7684; &#x9700;&#x8981;&#x89E3;&#x51B3;</p>
+</blockquote>
+<h1 id="&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x65B9;&#x5F0F;">&#x89E3;&#x51B3;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;&#x7684;&#x65B9;&#x5F0F;</h1>
+<blockquote>
+<p>1.&#x5F00;&#x653E;&#x5B9A;&#x5740;&#x6CD5;&#xFF1A;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#x65F6;&#xFF0C;&#x5148;&#x4ECE;&#x8BE5;&#x4F4D;&#x7F6E;&#x540E;&#x9762;&#x627E;&#xFF0C;&#x627E;&#x5230;&#x7A7A;&#x4F4D;&#xFF0C;&#x518D;&#x586B;&#x5165;&#x6570;&#x636E; &#x5E76;&#x8BB0;&#x5F55;&#x8FD9;&#x4E2A;&#x4F4D;&#x7F6E;</p>
+<p>&#x9700;&#x8981;&#x5927;&#x4E8E;&#x6570;&#x636E;&#x91CF;&#x7684;&#x7A7A;&#x95F4;</p>
+<p>2.&#x518D;&#x54C8;&#x5E0C;&#x6CD5;&#xFF1A;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x65F6; &#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x4E2A;&#x3001;&#x7B2C;&#x4E09;&#x4E2A;&#x6563;&#x5217;&#x51FD;&#x6570; &#x3001;&#x7B2C;&#x56DB;&#x4E2A;&#x6563;&#x5217;&#x51FD;&#x6570; &#x7B97;&#x4F4D;&#x7F6E; &#x76F4;&#x5230;&#x6CA1;&#x6709;&#x51B2;&#x7A81;</p>
+<p>3.&#x94FE;&#x5730;&#x5740;&#x6CD5;&#xFF08;&#x5E38;&#x7528;&#xFF09;&#xFF1A;&#x76F8;&#x540C;&#x4F4D;&#x7F6E;&#x51B2;&#x7A81;&#x7684;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x94FE;&#x8868;  &#x4E00;&#x4E2A;&#x51B2;&#x7A81;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x51B2;&#x7A81;</p>
+<p>4.&#x9009;&#x53D6;&#x6070;&#x5F53;&#x7684;&#x6563;&#x5217;&#x51FD;&#x6570; &#x51CF;&#x5C11;&#x54C8;&#x5E0C;&#x51B2;&#x7A81;  </p>
+</blockquote>
+<h1 id="&#x6563;&#x5217;&#x51FD;&#x6570;">&#x6563;&#x5217;&#x51FD;&#x6570;</h1>
+<blockquote>
+<p>&#x9009;&#x53D6;&#xFF1A;</p>
+<p>1.&#x5C3D;&#x53EF;&#x80FD;&#x5E73;&#x5747;&#x5206;&#x5E03;&#x5728;&#x6563;&#x5217;&#x8868;</p>
+<p>2.&#x5173;&#x952E;&#x5B57;&#x6781;&#x5C0F;&#x7684;&#x53D8;&#x5316;&#x5F15;&#x8D77;&#x54C8;&#x5E0C;&#x503C;&#x6781;&#x5927;&#x7684;&#x53D8;&#x5316;</p>
+<p>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>1.&#x9664;&#x6CD5;&#x6563;&#x5217;&#x6CD5;  &#xFF1A;</p>
+<p>f (key) = value%p;</p>
+<p>p &#x4E3A; 0-value&#x7684;&#x6700;&#x5927;&#x8D28;&#x6570;</p>
+<p>2.&#x5E73;&#x65B9;&#x6563;&#x5217;&#x6CD5;  &#xFF1A;</p>
+<p>f (key) = value*value &gt;&gt; d ;</p>
+<p>d &#x4E3A;&#x4E00;&#x6574;&#x6570; &#x4FDD;&#x8BC1;&#x6570;&#x5B57;&#x4E0D;&#x6EA2;&#x51FA;</p>
+<p>2.&#x6590;&#x6CE2;&#x90A3;&#x5951;&#x6563;&#x5217;&#x6CD5;  &#xFF1A;</p>
+<p>16       Fibonacci = 40503</p>
+<p>32       Fibonacci = 2654435769</p>
+<p>64       Fibonacci = 11400714819323198485</p>
+<p>f (key) = value*Fibonacci &gt;&gt; 28 ;</p>
+</blockquote>
+
                                 
                                 </section>
                             
@@ -526,7 +1264,7 @@ void QuickSort(int *arr, int left,int right)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.5","depth":1,"previous":{"title":"English","level":"1.4","depth":1,"path":"English/index.md","ref":"./English/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"数据结构/index.md","mtime":"2019-01-06T11:22:01.729Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-08T04:42:40.623Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据结构","level":"1.5","depth":1,"previous":{"title":"English","level":"1.4","depth":1,"path":"English/index.md","ref":"./English/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"数据结构/index.md","mtime":"2019-01-08T08:53:26.817Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-08T09:07:07.498Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
