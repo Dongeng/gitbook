@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>结构体 · GitBook</title>
+        <title>socket · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../bool和内联函数/" />
+    <link rel="next" href="../../English/" />
     
     
-    <link rel="prev" href="../命名空间/" />
+    <link rel="prev" href="../泛型/" />
     
 
     </head>
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="./">
+        <li class="chapter " data-level="1.3.2" data-path="../结构体/">
             
-                <a href="./">
+                <a href="../结构体/">
             
                     
                     结构体
@@ -298,9 +298,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.14" data-path="../socket/">
+        <li class="chapter active" data-level="1.3.14" data-path="./">
             
-                <a href="../socket/">
+                <a href="./">
             
                     
                     socket
@@ -417,7 +417,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >结构体</a>
+        <a href="../.." >socket</a>
     </h1>
 </div>
 
@@ -432,70 +432,202 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7ED3;&#x6784;&#x4F53;">&#x7ED3;&#x6784;&#x4F53;</h1>
-<h1 id="&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;">&#x7ED3;&#x6784;&#xFF0C;&#x8054;&#x5408;&#xFF0C;&#x679A;&#x4E3E;</h1>
+                                <h1 id="socket">socket</h1>
+<h1 id="server&#x7AEF;">server&#x7AEF;</h1>
 <blockquote>
-<p>&#x90FD;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x5173;&#x952E;&#x5B57;&#x4E86;</p>
-<p>C++&#x7ED3;&#x6784;&#x652F;&#x6301;&#x51FD;&#x6570;&#x6210;&#x5458;</p>
+<p>1.&#x52A0;&#x8F7D;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;&#xFF08;WSAStartup()/socket&#xFF09;</p>
+<p>2.&#x7ED1;&#x5B9A;&#x5957;&#x63A5;&#x5B57;&#x5230;&#x4E00;&#x4E2A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF08;bind()&#xFF09;</p>
+<p>3.&#x5957;&#x63A5;&#x5B57;&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x7B49;&#x5F85;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF08;listen()&#xFF09;</p>
+<p>4.&#x8BF7;&#x6C42;&#x5230;&#x6765;&#xFF0C;&#x63A5;&#x53D7;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x5E94;&#x4E8E;&#x6B64;&#x6B21;&#x8FDE;&#x63A5;&#x7684;&#x5957;&#x63A5;&#x5B57;&#xFF08;accept()&#xFF09;</p>
+<p>5.&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x548C;client&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF08;send()/recv()&#xFF09;</p>
+<p>6.&#x8FD4;&#x56DE; &#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;</p>
+<p>7.&#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x5173;&#x95ED;&#x52A0;&#x8F7D;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x5E93;&#xFF08;closesocket()/WSAClean()&#xFF09;</p>
 </blockquote>
-<pre><code>#if 1
+<pre><code>#include &lt;iostream&gt;
+
+#include &lt;winSock2.h&gt;
+
+#pragma comment (lib,&quot;ws2_32.lib&quot;)
 
 using namespace std;
-struct student
+
+#define BUF_SIZE 128
+
+int main()
 {
-    char* name;
-    void showName()
+    WSADATA wsd;
+
+    char  sendBuf[BUF_SIZE];
+    char  recvBuf[BUF_SIZE];
+
+    //&#x52A0;&#x8F7D;&#x5957;&#x63A5;&#x5B57;&#x5E93;  WSAStartup()
+    if (WSAStartup(MAKEWORD(2, 2), &amp;wsd) != 0)
     {
-        cout &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; &quot;WSAStartup failed&quot; &lt;&lt; endl;
+        return 1;
     }
-};
-int main()
-{
-    student s = { &quot;ldc&quot; };
-    s.showName();
-    return 0;
-}
 
-#endif
-</code></pre><blockquote>
-<p>&#x533F;&#x540D;&#x8054;&#x5408;</p>
-</blockquote>
-<pre><code>#if 1
-using namespace std;
-
-
-int main()
-{
-    union
+    //&#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;  socket()
+    SOCKET wServer = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (INVALID_SOCKET == wServer)
     {
-        int i;
-        char c;
-    };
-    i = 65;
-    cout &lt;&lt; c &lt;&lt; endl;//A
+        cout &lt;&lt; &quot;socket failed&quot; &lt;&lt; endl;
+
+        WSACleanup();
+        return 1;
+    }
+
+    //&#x7ED1;&#x5B9A;ip  &#x7AEF;&#x53E3; bind()
+    /*
+        bind(SOCKET s,const sockaddr *addr,int  namelen)
+
+        s &#x662F;&#x8981;&#x8FDE;&#x63A5;&#x7684;&#x5957;&#x63A5;&#x5B57;
+
+    */
+    sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;);
+    addr.sin_port = htons(4999);
+
+    if (SOCKET_ERROR == bind(wServer, (sockaddr *)&amp;addr, sizeof(addr)))
+    {
+        cout &lt;&lt; &quot;bind failed&quot; &lt;&lt; endl;
+        closesocket(wServer);
+        WSACleanup();
+        return 1;
+    }
+
+    //&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x6A21;&#x5F0F;
+    if (SOCKET_ERROR == listen(wServer, 1))
+    {
+        cout &lt;&lt; &quot;listen failed&quot; &lt;&lt; endl;
+        closesocket(wServer);
+        WSACleanup();
+        return 1;
+    }
+
+
+    //&#x63A5;&#x53D7;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;  accept
+    SOCKET sClient = accept(wServer, 0, 0);
+    if (INVALID_SOCKET == sClient)
+    {
+        cout &lt;&lt; &quot;accept failed&quot; &lt;&lt; endl;
+        closesocket(wServer);
+        WSACleanup();
+        return 1;
+    }
+
+    while (true)
+    {
+        ZeroMemory(recvBuf, BUF_SIZE);//&#x5148;&#x6E05;&#x7A7A;
+        recv(sClient, recvBuf, BUF_SIZE, 0);//&#x518D;&#x63A5;&#x6536;
+        cout &lt;&lt; &quot;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x7684;&#x6D88;&#x606F;:&quot; &lt;&lt; recvBuf &lt;&lt; endl;
+
+        if (recvBuf[0] == 0)
+        {
+            break;
+        }
+
+        ZeroMemory(sendBuf, BUF_SIZE);//&#x5148;&#x6E05;&#x7A7A;
+        cout &lt;&lt; &quot;&#x8981;&#x53D1;&#x9001;&#x7ED9;&#x5BA2;&#x670D;&#x7AEF;&#x7684;&#x6D88;&#x606F;&quot; &lt;&lt; endl;
+        cin &gt;&gt; sendBuf;
+        send(sClient, sendBuf, BUF_SIZE, 0);
+    }
+    closesocket(wServer);
+    closesocket(sClient);
+    WSACleanup();
     return 0;
 }
-
-#endif
-</code></pre><blockquote>
-<p>&#x679A;&#x4E3E;</p>
+</code></pre><h1 id="client&#x7AEF;">client&#x7AEF;</h1>
+<blockquote>
+<p>1.&#x52A0;&#x8F7D;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;&#xFF08;WSAStartup()/socket&#xFF09;</p>
+<p>2.&#x5411;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF08;connect()&#xFF09;</p>
+<p>3.&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#xFF08;send()/recv()&#xFF09;</p>
+<p>4.&#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;&#xFF0C;&#x5173;&#x95ED;&#x52A0;&#x8F7D;&#x7684;&#x5957;&#x63A5;&#x5B57;&#x5E93;&#xFF08;closesocket()/WSAClean()&#xFF09;</p>
 </blockquote>
-<pre><code>#if 1
+<pre><code>#include &quot;winsock2.h&quot;  
+#include &lt;iostream&gt;  
+#pragma comment(lib, &quot;ws2_32.lib&quot;)  
+
 using namespace std;
-enum Color
-{
-    RED,//1
-    BLUE,//2
-    BLACK//3
-};
+
+#define BUF_SIZE 128
 
 int main()
 {
-    Color c = RED;
+    WSADATA wsd;
+
+    char  sendBuf[BUF_SIZE];
+    char  recvBuf[BUF_SIZE];
+
+
+    //&#x52A0;&#x8F7D;&#x5957;&#x63A5;&#x5B57;&#x5E93;  WSAStartup()
+    if (WSAStartup(MAKEWORD(2, 2), &amp;wsd) != 0)
+    {
+        cout &lt;&lt; &quot;WSAStartup failed&quot; &lt;&lt; endl;
+        return 1;
+    }
+
+    /*
+        socket(int af,int type, int protocol)
+
+        af &#x53C2;&#x6570;&#x8868;&#x793A;&#x4E92;&#x8054;&#x7F51;&#x534F;&#x8BAE;&#x7248;&#x672C;   AF_INET &#x662F; ipv4
+        type&#x8868;&#x793A;&#x4F7F;&#x7528;&#x54EA;&#x79CD;socket, 
+        protocol&#x8868;&#x793A;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x534F;&#x8BAE;  IPPROTO_TCP &#x662F; tcp&#x534F;&#x8BAE;
+    */
+
+    //&#x521B;&#x5EFA;&#x5957;&#x63A5;&#x5B57;  socket()
+    SOCKET wServer = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+    if (INVALID_SOCKET == wServer)
+    {
+        cout &lt;&lt; &quot;socket failed&quot; &lt;&lt; endl;
+
+        WSACleanup();
+        return 1;
+    }
+
+
+    /*&#x8FDE;&#x63A5;&#x5957;&#x63A5;&#x5B57;   connect(SOCKET s,const sockaddr *name,int namelen)
+     s  &#x8868;&#x793A;&#x8981;&#x8FDE;&#x63A5;&#x7684;socket
+
+    */
+    sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_addr.s_addr = inet_addr(&quot;127.0.0.1&quot;);
+    addr.sin_port = htons(4999);
+
+    if (SOCKET_ERROR == connect(wServer, (sockaddr*)&amp;addr, sizeof(addr)))
+    {
+        cout &lt;&lt; &quot;connect failed&quot; &lt;&lt; endl;
+
+        WSACleanup();
+        return 1;
+    }
+    int results;
+    while (true)
+    {
+        ZeroMemory(sendBuf, BUF_SIZE);//&#x5148;&#x6E05;&#x7A7A;
+        cout &lt;&lt; &quot;&#x8981;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7684;&#x6D88;&#x606F;&quot; &lt;&lt; endl;
+        cin &gt;&gt; sendBuf;
+        results = send(wServer, sendBuf, BUF_SIZE, 0);
+        if (SOCKET_ERROR == results)
+        {
+            cout &lt;&lt; &quot;connect failed&quot; &lt;&lt; endl;
+            closesocket(wServer);
+            WSACleanup();
+            return 1;
+        }
+        ZeroMemory(recvBuf, BUF_SIZE);//&#x5148;&#x6E05;&#x7A7A;
+        recv(wServer, recvBuf, BUF_SIZE, 0);//&#x518D;&#x63A5;&#x6536;
+        cout &lt;&lt; &quot;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;:&quot; &lt;&lt; recvBuf &lt;&lt; endl;
+
+    }
+    closesocket(wServer);
+    WSACleanup();
+
     return 0;
 }
-
-#endif
 </code></pre>
                                 
                                 </section>
@@ -523,12 +655,12 @@ int main()
 
             
                 
-                <a href="../命名空间/" class="navigation navigation-prev " aria-label="Previous page: 命名空间">
+                <a href="../泛型/" class="navigation navigation-prev " aria-label="Previous page: 泛型">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../bool和内联函数/" class="navigation navigation-next " aria-label="Next page: bool和内联函数">
+                <a href="../../English/" class="navigation navigation-next " aria-label="Next page: English">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -539,7 +671,7 @@ int main()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"结构体","level":"1.3.2","depth":2,"next":{"title":"bool和内联函数","level":"1.3.3","depth":2,"path":"C++/bool和内联函数/index.md","ref":"./C++/bool和内联函数/index.md","articles":[]},"previous":{"title":"命名空间","level":"1.3.1","depth":2,"path":"C++/命名空间/index.md","ref":"./C++/命名空间/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/结构体/index.md","mtime":"2019-01-08T13:19:41.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-09T05:20:26.616Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"socket","level":"1.3.14","depth":2,"next":{"title":"English","level":"1.4","depth":1,"path":"English/index.md","ref":"./English/index.md","articles":[]},"previous":{"title":"泛型","level":"1.3.13","depth":2,"path":"C++/泛型/index.md","ref":"./C++/泛型/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"C++/socket/index.md","mtime":"2019-01-09T05:19:38.748Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-09T05:20:26.616Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
