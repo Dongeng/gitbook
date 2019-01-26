@@ -22,4 +22,10 @@
     * [STL](./数据结构/STL/index.md)
     * [哈希表](./数据结构/哈希表/index.md)
 * [算法](./算法/index.md)
+* [Win32](./Win32/index.md)
+    * [message](./Win32/message/index.md)
+    * [menu](./Win32/menu/index.md)
+    * [gdi](./Win32/gdi/index.md)
+    * [控件](./Win32/控件/index.md)
+    * [进程线程](./Win32/进程线程/index.md)
 

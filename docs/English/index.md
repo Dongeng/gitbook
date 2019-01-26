@@ -106,3 +106,8 @@ huge:
 reported:
 > adj. 报告的；据报道的
 > v. 报道（report的过去分词）；报告；记录
+
+
+protocol:
+> n.（数据传输）协议
+> 
