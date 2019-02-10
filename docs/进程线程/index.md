@@ -130,7 +130,7 @@
 > 
 > 互斥对象的使用规则：如果线程id为0,表示无效的id，互斥对象没有被线程所拥有，互斥对象发出信号
 > 
-> 如果id非0,表示有线程拥有互斥对象
+> 如果id非0,表示有线程拥有互斥对象，不发出信号
 > 
 > 使用：
 > 
@@ -175,3 +175,137 @@
 > 结束主线程之前，确认子线程结束
 > 
 > `GetExitCodeThread()` 得到线程退出码
+
+# 运行实例
+
+	#include "stdafx.h"
+	#include <Windows.h>
+	
+	HANDLE g_hEve;
+	CRITICAL_SECTION g_cs;
+	HANDLE g_hMutex;
+	HANDLE g_hSep;
+	
+	int ticket = 100;
+	
+	
+	DWORD WINAPI ThreadProc(
+		 LPVOID param
+		)
+	{
+		while (1)
+		{
+	
+			//WaitForSingleObject(g_hEve, INFINITE);//无限制的等待g_hEve
+			//EnterCriticalSection(&g_cs);;//进入临界区
+			//WaitForSingleObject(g_hMutex, INFINITE);;//无限制的等待g_hMutex
+			WaitForSingleObject(g_hSep, INFINITE);//无限制的等待g_hSep
+			if (ticket > 0)
+			{
+				printf("代售点%d售出第%d张票\n",(int)param, ticket);
+				--ticket;
+			}
+			else
+			{
+				//LeaveCriticalSection(&g_cs);//离开临界区
+				//SetEvent(g_hEve);//重置事件状态
+				//ReleaseMutex(g_hMutex);//重置互斥对象
+				ReleaseSemaphore(g_hSep, 1, nullptr);//重置信号量
+				break;
+			}
+			//LeaveCriticalSection(&g_cs);//离开临界区
+			//SetEvent(g_hEve);//重置事件状态
+			//ReleaseMutex(g_hMutex);//重置互斥对象
+			ReleaseSemaphore(g_hSep, 1, nullptr);//重置信号量
+		}
+	
+		return 0;
+	}
+	
+	
+	
+	int _tmain(int argc, _TCHAR* argv[])
+	{
+	
+		//g_hEve = CreateEvent(nullptr, false, true, nullptr);//创建g_hEve
+		//InitializeCriticalSection(&g_cs);//初始化临界区
+		//g_hMutex = CreateMutex(nullptr, false, nullptr);//创建g_hMutex
+		g_hSep = CreateSemaphore(nullptr, 1, 1, nullptr);//创建g_hSep
+	
+	
+	
+		int index = 1;
+		//子线程
+		HANDLE thread_one = CreateThread(nullptr, 0, ThreadProc, (LPVOID)index, 0, nullptr);
+		index++;
+		HANDLE thread_two = CreateThread(nullptr, 0, ThreadProc, (LPVOID)index, 0, nullptr);
+		index++;
+		HANDLE thread_three = CreateThread(nullptr, 0,ThreadProc, (LPVOID)index, 0, nullptr);
+		index++;
+		HANDLE thread_four = CreateThread(nullptr, 0, ThreadProc, (LPVOID)index, 0, nullptr);
+	
+		//主线程
+	
+		while (1)
+		{
+			//WaitForSingleObject(g_hEve, INFINITE);//无限制的等待g_hEve
+			//EnterCriticalSection(&g_cs);;//进入临界区
+			//WaitForSingleObject(g_hMutex, INFINITE);;//无限制的等待g_hMutex
+			WaitForSingleObject(g_hSep, INFINITE);//无限制的等待g_hSep
+			if (ticket > 0)
+			{
+				printf("火车站售出第%d张票\n", ticket);
+				--ticket;
+			}
+			else
+			{
+				//LeaveCriticalSection(&g_cs);//离开临界区
+				//SetEvent(g_hEve);//重置事件状态
+				//ReleaseMutex(g_hMutex);//重置互斥对象
+				ReleaseSemaphore(g_hSep, 1, nullptr);//重置信号量
+				break;
+			}
+			//LeaveCriticalSection(&g_cs);//离开临界区
+			//SetEvent(g_hEve);//重置事件状态
+			//ReleaseMutex(g_hMutex);//重置互斥对象
+			ReleaseSemaphore(g_hSep, 1, nullptr);//重置信号量
+		}
+	
+		
+	
+	
+	
+		//等待所有子线程退出
+		DWORD exitCode_one, exitCode_two, exitCode_three, exitCode_four;
+		while (true)
+		{
+			GetExitCodeThread(thread_one, &exitCode_one);
+			GetExitCodeThread(thread_two, &exitCode_two);
+			GetExitCodeThread(thread_three, &exitCode_three);
+			GetExitCodeThread(thread_four, &exitCode_four);
+	
+			if (exitCode_one != STILL_ACTIVE && exitCode_two != STILL_ACTIVE &&
+				exitCode_three != STILL_ACTIVE && exitCode_four != STILL_ACTIVE)
+			{
+				break;
+			}
+		}
+
+		/*
+		这一步放在循环后面，确保所有线程退出，在关闭/释放对象
+		*/
+		//DeleteCriticalSection(&g_cs);//删除临界区
+		//CloseHandle(g_hEve);//关闭事件
+		//CloseHandle(g_hMutex);//关闭互斥对象
+		CloseHandle(g_hSep);//关闭信号量
+	
+		//结束子线程
+		TerminateThread(thread_one,0);
+		TerminateThread(thread_two, 0);
+		TerminateThread(thread_three, 0);
+		TerminateThread(thread_four, 0);
+	
+	
+	
+		return 0;
+	}

@@ -16,7 +16,6 @@
     * [C++11](./C++/C++11/index.md)
     * [面向对象](./C++/面向对象/index.md)
     * [泛型](./C++/泛型/index.md)
-    * [socket](./C++/socket/index.md)
 * [English](./English/index.md)
 * [数据结构](./数据结构/index.md)
     * [STL](./数据结构/STL/index.md)
@@ -27,5 +26,6 @@
     * [menu](./Win32/menu/index.md)
     * [gdi](./Win32/gdi/index.md)
     * [控件](./Win32/控件/index.md)
-    * [进程线程](./Win32/进程线程/index.md)
+* [进程线程](./进程线程/index.md)
+* [socket](./socket/index.md)
 
