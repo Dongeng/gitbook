@@ -298,4 +298,196 @@ A端可以到B端，B端也可以到A端，当某一端正在发送时，不能�
 #select函数，多路io复用
 解决开线程开销大的问题
 
+服务端：
 
+	#include "stdafx.h"
+	#include <Windows.h>
+	#include <vector>
+	//1.
+	//#include <WinSock2.h>
+	#pragma comment (lib,"ws2_32.lib")
+	
+	
+	
+	int _tmain(int argc, _TCHAR* argv[])
+	{
+		FD_SET fd;
+		timeval time = {0,0};
+		SOCKET Serve;
+		SOCKADDR_IN addr = { 0 };
+		std::vector<SOCKET> sC;
+		int ret = 0;
+	
+	
+		WSADATA wsaData;
+		WSAStartup(MAKEWORD(2, 2), &wsaData);
+	
+		if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
+		{
+			printf("请求版本失败\n");
+			return -1;
+		}
+		printf("请求版本成功\n");
+	
+	
+		Serve = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+		
+		if (INVALID_SOCKET == Serve)
+		{
+			printf("创建SOCKET失败\n");
+			WSACleanup();
+			return -1;
+		}
+	
+		
+		addr.sin_family = AF_INET;
+		addr.sin_port = htons(8888);
+		addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	
+		if (bind(Serve, (SOCKADDR *)&addr, sizeof(addr)) == SOCKET_ERROR)
+		{
+			printf("绑定协议地址失败\n");
+			closesocket(Serve);
+			WSACleanup();
+			return -1;
+		}
+		printf("绑定协议地址成功\n");
+		
+		if (listen(Serve, 10) == SOCKET_ERROR)
+		{
+			printf("监听失败\n");
+			closesocket(Serve);
+			WSACleanup();
+			return -1;
+		}
+		printf("监听成功\n");
+	
+		sC.push_back(Serve);
+		
+	
+		while (1)
+		{
+			for (size_t i = 0; i < sC.size(); ++i)
+			{
+				FD_ZERO(&fd);
+				FD_SET(sC.at(i), &fd);
+				ret = select(1, &fd, nullptr, nullptr, &time);
+				if (ret < 0)
+				{
+					printf("select错误\n");
+					break;
+				}
+				else if (ret == 0)
+				{
+					continue;
+				}
+				else
+				{
+					if (FD_ISSET(sC.at(i), &fd))
+					{
+						if (i == 0)
+						{
+							SOCKADDR_IN client_addr = { 0 };
+							int len = sizeof(client_addr);
+							SOCKET Client = accept(Serve, (SOCKADDR *)&client_addr, &len);
+							if (INVALID_SOCKET == Client)
+							{
+								printf("连接失败\n");
+								closesocket(Serve);
+								WSACleanup();//关闭套接字
+								return -1;
+							}
+							sC.push_back(Client);
+							printf("连接成功\n");
+						}
+						else
+						{
+							char buff[128] = { 0 };
+							if (recv(sC.at(i), buff, sizeof(buff) - 1, 0) > 0)
+							{
+								printf("接收信息：%s\n", buff);
+							}
+						}
+					}
+					
+				}
+			}
+		}
+		return 0;
+	
+	}
+
+
+客户端：
+
+
+	#include "stdafx.h"
+	
+	
+	//1.
+	#include <WinSock2.h>
+	#pragma comment (lib,"ws2_32.lib")
+	
+	
+	
+	int _tmain(int argc, _TCHAR* argv[])
+	{
+		//2.
+		WSADATA wsaData;
+		WSAStartup(MAKEWORD(2, 2), &wsaData);
+	
+		if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
+		{
+			printf("请求版本失败\n");
+			return -1;
+		}
+		printf("请求版本成功\n");
+	
+		//3.
+		SOCKET client = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	
+		if (INVALID_SOCKET == client)
+		{
+			printf("创建SOCKET失败\n");
+			WSACleanup();
+			return -1;
+		}
+	
+		//4.
+		SOCKADDR_IN addr = { 0 };
+	
+		addr.sin_family = AF_INET;
+		addr.sin_port = htons(8888);
+		addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	
+		
+		//5.
+		if (connect(client, (SOCKADDR*)&addr, sizeof(addr)) == SOCKET_ERROR)
+		{
+			printf("连接失败\n");
+			closesocket(client);
+			WSACleanup();
+			return -1;
+		}
+		
+		printf("连接成功\n");
+		char buff[128] = { 0 };
+		char rbuff[128] = { 0 };
+		while (1)
+		{
+			ZeroMemory(buff, sizeof(buff));
+			ZeroMemory(rbuff, sizeof(rbuff));
+			scanf_s("%s", buff, sizeof(buff) - 1);
+			if (send(client,buff,strlen(buff),0) > 0)
+			{
+				printf("发送成功\n");
+			}
+		}
+	
+	
+	
+		//9.
+		closesocket(client);
+		WSACleanup();
+		return 0;
+	}

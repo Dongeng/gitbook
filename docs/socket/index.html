@@ -764,7 +764,195 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 </code></pre><h1 id="select&#x51FD;&#x6570;&#xFF0C;&#x591A;&#x8DEF;io&#x590D;&#x7528;">select&#x51FD;&#x6570;&#xFF0C;&#x591A;&#x8DEF;io&#x590D;&#x7528;</h1>
 <p>&#x89E3;&#x51B3;&#x5F00;&#x7EBF;&#x7A0B;&#x5F00;&#x9500;&#x5927;&#x7684;&#x95EE;&#x9898;</p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#xFF1A;</p>
+<pre><code>#include &quot;stdafx.h&quot;
+#include &lt;Windows.h&gt;
+#include &lt;vector&gt;
+//1.
+//#include &lt;WinSock2.h&gt;
+#pragma comment (lib,&quot;ws2_32.lib&quot;)
 
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    FD_SET fd;
+    timeval time = {0,0};
+    SOCKET Serve;
+    SOCKADDR_IN addr = { 0 };
+    std::vector&lt;SOCKET&gt; sC;
+    int ret = 0;
+
+
+    WSADATA wsaData;
+    WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
+
+    if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
+    {
+        printf(&quot;&#x8BF7;&#x6C42;&#x7248;&#x672C;&#x5931;&#x8D25;\n&quot;);
+        return -1;
+    }
+    printf(&quot;&#x8BF7;&#x6C42;&#x7248;&#x672C;&#x6210;&#x529F;\n&quot;);
+
+
+    Serve = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+    if (INVALID_SOCKET == Serve)
+    {
+        printf(&quot;&#x521B;&#x5EFA;SOCKET&#x5931;&#x8D25;\n&quot;);
+        WSACleanup();
+        return -1;
+    }
+
+
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(8888);
+    addr.sin_addr.S_un.S_addr = inet_addr(&quot;127.0.0.1&quot;);
+
+    if (bind(Serve, (SOCKADDR *)&amp;addr, sizeof(addr)) == SOCKET_ERROR)
+    {
+        printf(&quot;&#x7ED1;&#x5B9A;&#x534F;&#x8BAE;&#x5730;&#x5740;&#x5931;&#x8D25;\n&quot;);
+        closesocket(Serve);
+        WSACleanup();
+        return -1;
+    }
+    printf(&quot;&#x7ED1;&#x5B9A;&#x534F;&#x8BAE;&#x5730;&#x5740;&#x6210;&#x529F;\n&quot;);
+
+    if (listen(Serve, 10) == SOCKET_ERROR)
+    {
+        printf(&quot;&#x76D1;&#x542C;&#x5931;&#x8D25;\n&quot;);
+        closesocket(Serve);
+        WSACleanup();
+        return -1;
+    }
+    printf(&quot;&#x76D1;&#x542C;&#x6210;&#x529F;\n&quot;);
+
+    sC.push_back(Serve);
+
+
+    while (1)
+    {
+        for (size_t i = 0; i &lt; sC.size(); ++i)
+        {
+            FD_ZERO(&amp;fd);
+            FD_SET(sC.at(i), &amp;fd);
+            ret = select(1, &amp;fd, nullptr, nullptr, &amp;time);
+            if (ret &lt; 0)
+            {
+                printf(&quot;select&#x9519;&#x8BEF;\n&quot;);
+                break;
+            }
+            else if (ret == 0)
+            {
+                continue;
+            }
+            else
+            {
+                if (FD_ISSET(sC.at(i), &amp;fd))
+                {
+                    if (i == 0)
+                    {
+                        SOCKADDR_IN client_addr = { 0 };
+                        int len = sizeof(client_addr);
+                        SOCKET Client = accept(Serve, (SOCKADDR *)&amp;client_addr, &amp;len);
+                        if (INVALID_SOCKET == Client)
+                        {
+                            printf(&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;\n&quot;);
+                            closesocket(Serve);
+                            WSACleanup();//&#x5173;&#x95ED;&#x5957;&#x63A5;&#x5B57;
+                            return -1;
+                        }
+                        sC.push_back(Client);
+                        printf(&quot;&#x8FDE;&#x63A5;&#x6210;&#x529F;\n&quot;);
+                    }
+                    else
+                    {
+                        char buff[128] = { 0 };
+                        if (recv(sC.at(i), buff, sizeof(buff) - 1, 0) &gt; 0)
+                        {
+                            printf(&quot;&#x63A5;&#x6536;&#x4FE1;&#x606F;&#xFF1A;%s\n&quot;, buff);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    return 0;
+
+}
+</code></pre><p>&#x5BA2;&#x6237;&#x7AEF;&#xFF1A;</p>
+<pre><code>#include &quot;stdafx.h&quot;
+
+
+//1.
+#include &lt;WinSock2.h&gt;
+#pragma comment (lib,&quot;ws2_32.lib&quot;)
+
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    //2.
+    WSADATA wsaData;
+    WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
+
+    if (LOBYTE(wsaData.wVersion) != 2 || HIBYTE(wsaData.wVersion) != 2)
+    {
+        printf(&quot;&#x8BF7;&#x6C42;&#x7248;&#x672C;&#x5931;&#x8D25;\n&quot;);
+        return -1;
+    }
+    printf(&quot;&#x8BF7;&#x6C42;&#x7248;&#x672C;&#x6210;&#x529F;\n&quot;);
+
+    //3.
+    SOCKET client = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+    if (INVALID_SOCKET == client)
+    {
+        printf(&quot;&#x521B;&#x5EFA;SOCKET&#x5931;&#x8D25;\n&quot;);
+        WSACleanup();
+        return -1;
+    }
+
+    //4.
+    SOCKADDR_IN addr = { 0 };
+
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(8888);
+    addr.sin_addr.S_un.S_addr = inet_addr(&quot;127.0.0.1&quot;);
+
+
+    //5.
+    if (connect(client, (SOCKADDR*)&amp;addr, sizeof(addr)) == SOCKET_ERROR)
+    {
+        printf(&quot;&#x8FDE;&#x63A5;&#x5931;&#x8D25;\n&quot;);
+        closesocket(client);
+        WSACleanup();
+        return -1;
+    }
+
+    printf(&quot;&#x8FDE;&#x63A5;&#x6210;&#x529F;\n&quot;);
+    char buff[128] = { 0 };
+    char rbuff[128] = { 0 };
+    while (1)
+    {
+        ZeroMemory(buff, sizeof(buff));
+        ZeroMemory(rbuff, sizeof(rbuff));
+        scanf_s(&quot;%s&quot;, buff, sizeof(buff) - 1);
+        if (send(client,buff,strlen(buff),0) &gt; 0)
+        {
+            printf(&quot;&#x53D1;&#x9001;&#x6210;&#x529F;\n&quot;);
+        }
+    }
+
+
+
+    //9.
+    closesocket(client);
+    WSACleanup();
+    return 0;
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -803,7 +991,7 @@ int _tmain(int argc, _TCHAR* argv[])
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"socket","level":"1.9","depth":1,"previous":{"title":"进程线程","level":"1.8","depth":1,"path":"进程线程/index.md","ref":"./进程线程/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"socket/index.md","mtime":"2019-02-10T23:47:43.128Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-10T23:48:40.604Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"socket","level":"1.9","depth":1,"previous":{"title":"进程线程","level":"1.8","depth":1,"path":"进程线程/index.md","ref":"./进程线程/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"socket/index.md","mtime":"2019-02-12T07:39:35.524Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-12T07:40:19.719Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
